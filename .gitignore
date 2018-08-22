@@ -12,6 +12,7 @@ app/config_local.py
 /[Ll]ib
 /[Ll]ocal
 pyvenv.cfg
+__py_cache__
 pip-selfcheck.json
 .assethashes
 .env
