@@ -6,5 +6,22 @@ from flask import (
 mod = Blueprint('public', __name__)
 
 @app.route('/')
-def hello_world():
+def index():
+    return render_template('public/index.html')
+
+
+@app.route('/apply')
+def application_email():
     return 'Hello, World!'
+
+
+@app.route('/apply-2')
+def application_full():
+    return 'Hello, World!'
+
+
+@app.route('/apply/success')
+def apply():
+    return 'Hello, World!'
+
+
