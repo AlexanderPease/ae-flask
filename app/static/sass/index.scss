@@ -1,6 +1,6 @@
 .index {
     .hero {
-        background-image: url('../img/hero.jpeg');
+        background-image: url($img_path + 'hero_@2x.jpg');
         background-size: 4096px 500px;
         background-repeat: no-repeat;
         background-position: 50% 100%;
@@ -11,10 +11,15 @@
 
     h1.hero-title {
         margin-top: 90px;
+        margin-bottom: 20px;
+        color: $white;
     }
 
-    p.hero-subtitle {
+    .hero-subtitle {
         size: 18px;
+        color: $white;
+        margin-right: 80px;
+        display: block;
     }
 
     // Posters
@@ -28,7 +33,7 @@
 
     $image-width: 120px;
     .poster-image {
-        background-image: url('../img/poster-full-time.png');
+        background-image: url($img_path + 'posters/poster-full-time.png');
         background-size: contain;
         height: 160px;
         width: $image-width;
@@ -39,11 +44,98 @@
         margin-left: $image-width + 40px;
     }
 
+    .poster-text>ul {
+        font-size: $text-large;
+    }
+
     .poster-title {
         font-size: $title-medium;
     }
 
     .poster-subtitle {
+        font-size: $text-large;
+        margin-top: 10px;
+    }
+
+    // Section breaks
+    .divider-1 {
+        background-image: url($img_path + 'divider_001_@2x.jpg');
+    }
+
+    .divider-2 {
+        background-image: url($img_path + 'divider_002_@2x.jpg');
+    }
+
+    .divider-3 {
+        background-image: url($img_path + 'form_@2x.jpg');
+    }
+
+    .quote-1 {
+        background-image: url($img_path + 'quote_001_@2x.jpg');
+    }
+
+    .quote-2 {
+        background-image: url($img_path + 'quote_002_@2x.jpg');
+    }
+
+    // Logos
+    .logo-box {
+        display: inline-block;
+        width: 230px;
+        height: 160px;
+        background-color: $light-gray;
+        background-size: cover;
+        margin: 18px;
+        text-align: center;
+    }
+
+    .logo-img-container {
+        // background-image: url($img_path + 'logo-wsj.png');
+        // // background-repeat: no-repeat;
+        // // background-size: cover;
+        width: 150px; 
+        height: 100px;
+        margin-top: 30px;
+        background-color:red;
+    }
+
+    .logo-image>img {
+        width:100%
+    }
+
+    // Newsletter form
+    .newsletter-email {
+        margin-top: 100px;
+    }
+
+    .newsletter-email>h2 {
+        color: $white;
+    }
+
+    // Bios
+    $image-width: 120px;
+    $image-height: 160px;
+
+    .bio {
+        min-height: $image-height + 10px;
+    }
+
+    .bio-top {
+        margin-top: 20px;
+    }
+
+    .bio-image {
+        height: $image-height;
+        width: $image-width;
+        position: absolute;
+    }
+
+    .bio-text {
+        margin-left: $image-width + 40px;
+    }
+
+    .bio-text>p {
+        color: $gray;
         margin-top: 10px;
     }
 }

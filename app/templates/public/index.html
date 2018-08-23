@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from 'macros/poster.html' import poster %}
+{% from 'macros/index.html' import poster, btn_get_started, bio %}
 
 {% block description %}Get ahead by learning from successful entrepreneurs.{% endblock %}
 
@@ -10,12 +10,11 @@
       <div class="row">
         <div class="offset-md-3 col-md-6">
           <h1 class="hero-title">
-            The ability to innovate is the most sought after skill for a professional.<br/>
-            Get ahead by learning from successful entrepreneurs.
+            &ldquo;We teach you the mindset of how to approach a problem&rdquo;
           </h1>
-          <p class="hero-subtitle">
+          <span class="hero-subtitle">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
-          </p>
+          </span>
         </div>
       </div>
     </div>
@@ -33,12 +32,225 @@
       </div>
 
       <div class="col-md-6">
-        {{ poster() }}
-        {{ poster() }}
-        {{ poster() }}
-        {{ poster() }}
+        {{
+          poster(
+          'Full-Time',
+          'Challenge yourself with an immersive learning experience.',
+          ['4 day intensive program', 'Next session: October 22-25', '$12,500 tuition']) 
+        }}
+        {{
+          poster(
+          'Part-Time',
+          'Learn valuable skills on weeknights or weekends.',
+          ['10 week course', 'Starting October 25', '$12,500']) 
+        }}
+        {{
+          poster(
+          'Online',
+          'Study online at your own pace.',
+          ['40 hours of video tutorials & assignments', '$4,500'])
+        }}
       </div>
     </div>
   </div>
+
+  <div class="section-break divider-1"></div>
+
+  <div class="section-qa container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="question">
+          Where Do AE: Students Work?
+        </p>
+        <p class="answer">
+          &ldquo;Sed ut perspi ciatis unde omnis iste natus error sit voluptatem.&rdquo;
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        <div class="logo-box">
+          <div class="logo-img-container">
+            <img src="{{ url_for('static', filename='logo-wsj.png') }}"/>
+          </div>
+        </div>
+        <div class="logo-box">
+          <div class="logo-img-container">
+            <img src="{{ url_for('static', filename='logo-wsj.png') }}"/>
+          </div>
+        </div>
+                <div class="logo-box">
+          <div class="logo-img-container">
+            <img src="{{ url_for('static', filename='logo-wsj.png') }}"/>
+          </div>
+        </div>
+                <div class="logo-box">
+          <div class="logo-img-container">
+            <img src="{{ url_for('static', filename='logo-wsj.png') }}"/>
+          </div>
+        </div>
+                <div class="logo-box">
+          <div class="logo-img-container">
+            <img class="logo-wsj" />
+          </div>
+        </div>
+                <div class="logo-box">
+          <div class="logo-img-container">
+            <img class="logo-wsj" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-quote quote-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="quote">&ldquo;Sed ut persp iciatis unde omnis ist natus error sit volupt atem accus antium ut persp iciatis unde omnis ist natus error sit volupt atem accus antium dolore mque.&rdquo;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-qa container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="question">
+          What Courses Do You Offer?
+        </p>
+        <p class="answer">
+          &ldquo;The Applied Entrepreneurship curriculum is taught in 9 applicable modules.&rdquo;
+        </p>
+        {{ btn_get_started() }}
+      </div>
+
+      <div class="col-md-6">
+        {{
+          poster(
+          'Full-Time',
+          'Challenge yourself with an immersive learning experience.',
+          ['4 day intensive program', 'Next session: October 22-25', '$12,500 tuition']) 
+        }}
+        {{
+          poster(
+          'Part-Time',
+          'Learn valuable skills on weeknights or weekends.',
+          ['10 week course', 'Starting October 25', '$12,500']) 
+        }}
+        {{
+          poster(
+          'Online',
+          'Study online at your own pace.',
+          ['40 hours of video tutorials & assignments', '$4,500'])
+        }}
+      </div>
+    </div>
+  </div>
+
+  <div class="section-break divider-3">
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-6 col-md-6">
+          <div class="newsletter-email">
+            <h2>Let Me Know About Future Workshops</h2>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="example@email.com" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-secondary" type="button">Sign Up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-qa container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="question">
+          Is There Financial Aid?
+        </p>
+        <p class="answer">
+          &ldquo;The Applied Entrepreneurship curriculum is taught in 9 applicable modules.&rdquo;
+        </p>
+        {{ btn_get_started() }}
+      </div>
+
+      <div class="col-md-6">
+        {{
+          poster(
+          'Full-Time',
+          'Challenge yourself with an immersive learning experience.',
+          ['4 day intensive program', 'Next session: October 22-25', '$12,500 tuition']) 
+        }}
+        {{
+          poster(
+          'Part-Time',
+          'Learn valuable skills on weeknights or weekends.',
+          ['10 week course', 'Starting October 25', '$12,500']) 
+        }}
+        {{
+          poster(
+          'Online',
+          'Study online at your own pace.',
+          ['40 hours of video tutorials & assignments', '$4,500'])
+        }}
+      </div>
+    </div>
+  </div>
+
+  <div class="section-break divider-2"></div>
+
+  <div class="section-qa container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="question">
+          Who Are My Instructors?
+        </p>
+        <p class="answer">
+          &ldquo;Sed ut perspi ciatis unde omnis iste natus error sit voluptatem.&rdquo;
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        {{ bio('Philip Petersen', 'Partner at Prehype and co-founder of Crafted By and Whitespace', 'Philip has been building products and businesses for 20+ years. He also helps corporations and entrepreneurs co-create new businesses together. He thinks a lot about entrepreneurship and how it can help the world.', 'philip-petersen.jpeg') }}
+
+        {{ bio('Dan Shipper', 'EIR at Prehype and co-founder of Firefly', 'Dan is an entrepreneur and writer living in New York City. He is currently consulting for several startups in NYC and working on an illustrated novella about entrepreneurship.', 'dan-shipper.jpeg') }}
+      </div>
+    </div>
+  </div>
+
+  <div class="section-qa container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="question">
+          Are There Any Guest Speakers?
+        </p>
+        <p class="answer">
+          &ldquo;Yes.&rdquo;
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        {{ bio('Saman Rahmanian', 'Co-founder Managed by Q and Roman', 'Having built and raised funding for two successful companies, Saman brings his expertise to our "Pitch Your Idea" class.', 'saman-rahmanian.jpeg') }}
+
+        {{ bio('Leif Abraham', 'TBD', 'TBD', 'leif-abraham.jpeg') }}
+
+        {{ bio('Henrik Werdelin', 'TBD', 'TBD', 'henrik-werdelin.jpeg') }}
+      </div>
+    </div>
+  </div>
+
+  <div class="section-quote quote-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="quote">&ldquo;Sed ut persp iciatis unde omnis ist natus error sit volupt atem accus antium ut persp iciatis unde omnis ist natus error sit volupt atem accus antium dolore mque.&rdquo;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 {% endblock %}

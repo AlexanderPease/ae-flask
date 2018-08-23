@@ -1,11 +1,11 @@
 // Text
 body {
-    line-height: 1;
+    line-height: 1.1;
     font-family: $font-family;
     color: $black;
 }
 
-h1, h2, p, span, .btn {
+h1, h2, h3, p, span, .btn {
     font-family: $font-family;
     font-family: $font-family;
     font-weight: 700;
@@ -18,6 +18,10 @@ h1 {
 
 h2 {
     size: $title-medium;
+}
+
+h3 {
+    size: $title-small;
 }
 
 p {
@@ -33,37 +37,81 @@ ul {
     size: 11px;
 }
 
+// Components
 .btn {
     border-radius: 0;
     border: none;
     font-size: $text-large;
     font-weight: 700;
-    padding-left: 36px;
-    padding-right: 36px;
+    padding: 10px 36px;
+
+    &:focus {
+        box-shadow: none;
+        border: none;
+    }
+}
+
+.btn-primary, .btn-secondary {
+    color: $white;
+
+    &:hover, &:active {
+        background-color: $dark-green;
+    }
 }
 
 .btn-primary {
     background-color: $green;
-    color: $white;
+}
 
-    &:hover {
-        background-color: $dark-green;
+.btn-secondary {
+    background-color: $black;
+}
+
+.form-control {
+    border-radius: 0;
+    border: none;
+    height: auto;
+
+    &:focus {
+        box-shadow: none;
+        border: none;
     }
+}
+
+input::placeholder {
+    color: $light-gray;
+}
+
+.input-group-append>.btn {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 // Sections
 .section-qa {
     margin-top: 80px;
+    margin-bottom: 60px;
 
     .question, .answer {
         font-size: $title-large;
-    }
-
-    .question {
         margin-bottom: 40px;
     }
 
     .answer {
         color: $gray
+    }
+}
+
+.section-break {
+    height: 300px;
+}
+
+.section-quote {
+    .quote {
+        margin-top: 200px;
+        margin-bottom: 80px;
+        color: $white;
+        font-size: $title-medium;
+        font-weight: 700;
     }
 }

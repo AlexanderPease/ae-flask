@@ -1,0 +1,38 @@
+.page-footer {
+    background-color: $green;
+    padding-top: 80px;
+    padding-bottom: 70px;
+
+    .col-footer {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+    h3, .footer-title, .footer-content, .footer-disclaimer {
+        color: $white;        
+    }
+
+    h3 {
+        margin-bottom: 50px;
+    }
+
+    .footer-title {
+        display: block;
+        font-size: $text-large;
+        margin-bottom: 20px;
+    }
+
+    .footer-content {
+        line-height: 1.5;
+        margin-bottom: 100px;
+    }
+
+    .footer-disclaimer {
+        font-size: $text-small;
+    }
+
+    .input-group-append>.btn {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
