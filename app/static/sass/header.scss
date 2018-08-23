@@ -1,0 +1,21 @@
+.navbar {
+    background-color: $white;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .navbar-brand {
+        font-size: $title-small;
+        color: $black;
+        font-weight: 700;
+        margin-left: 10px;
+    }
+
+    .btn-primary {
+        padding-top: 21px;
+        padding-bottom: 21px;
+    }
+
+    .btn-right {
+        margin-right: -16px;
+    }
+}
