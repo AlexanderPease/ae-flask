@@ -1,0 +1,293 @@
+body {
+  line-height: 1.1;
+  font-family: Helvetica;
+  color: #000000; }
+
+h1, h2, h3, p, span, .btn {
+  font-family: Helvetica;
+  font-family: Helvetica;
+  font-weight: 700;
+  color: #000000; }
+
+h1 {
+  size: 60px; }
+
+h2 {
+  size: 36px; }
+
+h3 {
+  size: 24px; }
+
+p {
+  size: 14px; }
+
+ul {
+  padding-left: 18px; }
+
+.caption {
+  size: 11px; }
+
+.colon-text {
+  color: #51A669; }
+
+.btn {
+  border-radius: 0;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px 36px; }
+  .btn:focus {
+    box-shadow: none;
+    border: none; }
+
+.btn-primary, .btn-secondary {
+  color: #FFFFFF; }
+  .btn-primary:hover, .btn-primary:active, .btn-secondary:hover, .btn-secondary:active {
+    background-color: #346D44; }
+
+.btn-primary {
+  background-color: #51A669; }
+
+.btn-secondary {
+  background-color: #000000; }
+
+.form-control {
+  border-radius: 0;
+  border: none;
+  height: auto; }
+  .form-control:focus {
+    box-shadow: none;
+    border: none; }
+
+input::placeholder {
+  color: #F2F2F2; }
+
+.input-group-append > .btn {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.section-qa {
+  margin-top: 80px;
+  margin-bottom: 60px; }
+  .section-qa .qa-left {
+    margin-right: 42px; }
+  .section-qa .qa-right {
+    margin-left: 42px;
+    margin-top: 200px; }
+  .section-qa .question, .section-qa .answer {
+    font-size: 48px;
+    margin-bottom: 40px; }
+  .section-qa .answer {
+    color: #999999; }
+
+.section-break {
+  height: 400px;
+  background-size: auto 100%;
+  background-repeat: no-repeat; }
+
+.section-quote {
+  height: 600px;
+  background-size: auto 100%;
+  background-repeat: no-repeat; }
+  .section-quote .quote {
+    margin-top: 200px;
+    margin-bottom: 80px;
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: 700; }
+
+.navbar {
+  background-color: #FFFFFF;
+  padding-top: 0;
+  padding-bottom: 0; }
+  .navbar .navbar-brand {
+    font-size: 24px;
+    color: #000000;
+    font-weight: 700;
+    margin-left: 10px; }
+  .navbar .btn-primary {
+    padding-top: 21px;
+    padding-bottom: 21px; }
+  .navbar .btn-right {
+    margin-right: -16px; }
+
+.page-footer {
+  background-color: #51A669;
+  padding-top: 80px;
+  padding-bottom: 70px; }
+  .page-footer .col-footer {
+    margin-left: 60px;
+    margin-right: 60px; }
+  .page-footer h3, .page-footer .footer-title, .page-footer .footer-content, .page-footer .footer-disclaimer {
+    color: #FFFFFF; }
+  .page-footer h3 {
+    margin-bottom: 50px; }
+  .page-footer .footer-title {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 20px; }
+  .page-footer .footer-content {
+    line-height: 1.5;
+    margin-bottom: 100px; }
+  .page-footer .footer-disclaimer {
+    font-size: 11px; }
+  .page-footer .input-group-append > .btn {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+
+.index .hero {
+  background-image: url("../img/hero_@2x.jpg");
+  background-size: auto 120%;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-color: #51A669;
+  height: 500px; }
+
+.index h1.hero-title {
+  margin-top: 90px;
+  margin-bottom: 20px;
+  color: #FFFFFF; }
+
+.index .hero-subtitle {
+  size: 18px;
+  color: #FFFFFF;
+  display: block;
+  margin-right: 80px;
+  margin-bottom: 30px; }
+
+.index .btn-preview-video {
+  background-color: #FFFFFF;
+  color: #51A669;
+  height: 70px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0; }
+  .index .btn-preview-video:hover {
+    color: #346D44; }
+
+.index .img-preview-video {
+  height: 70px;
+  width: 115px;
+  display: inline-block;
+  margin-right: 30px; }
+
+.index .oi {
+  font-size: 16px;
+  margin-right: 4px;
+  background-color: #FFFFFF;
+  color: #51A669; }
+
+.index .poster {
+  margin-bottom: 80px; }
+
+.index .poster-image {
+  width: 120px;
+  position: absolute; }
+
+.index .poster-text {
+  margin-left: 160px; }
+
+.index .poster-text > ul {
+  font-size: 18px; }
+
+.index .poster-title {
+  font-size: 36px; }
+
+.index .poster-subtitle {
+  font-size: 18px;
+  margin-top: 10px; }
+
+.index .poster-mini {
+  margin-bottom: 60px; }
+
+.index .poster-mini-image {
+  width: 80px;
+  display: block;
+  margin-bottom: 16px; }
+
+.index .poster-mini-subtitle {
+  color: #999999;
+  margin-top: 8px; }
+
+.index .divider-1 {
+  background-image: url("../img/divider_001_@2x.jpg");
+  background-position: 50% 100%; }
+
+.index .divider-2 {
+  background-image: url("../img/divider_002_@2x.jpg"); }
+
+.index .divider-3 {
+  background-image: url("../img/form_@2x.jpg"); }
+
+.index .quote-1 {
+  background-image: url("../img/quote_001_@2x.jpg"); }
+
+.index .quote-2 {
+  background-image: url("../img/quote_002_@2x.jpg"); }
+
+.index .logo-box {
+  display: inline-block;
+  width: 210px;
+  height: 160px;
+  background-color: #F2F2F2;
+  margin: 18px; }
+
+.index .logo-img-container {
+  background-repeat: no-repeat;
+  background-size: 120px;
+  background-position: 50%;
+  width: 100%;
+  height: 60px;
+  margin-top: 50px; }
+
+.index .logo-wsj {
+  background-image: url("../img/logos/logo-wsj.png"); }
+
+.index .logo-nike {
+  background-image: url("../img/logos/logo-nike.png"); }
+
+.index .logo-barkbox {
+  background-image: url("../img/logos/logo-barkbox.png"); }
+
+.index .logo-diageo {
+  background-image: url("../img/logos/logo-diageo.png"); }
+
+.index .logo-novozymes {
+  background-image: url("../img/logos/logo-novozymes.png"); }
+
+.index .logo-carlsberg {
+  background-image: url("../img/logos/logo-carlsberg.png"); }
+
+.index .newsletter-email {
+  margin-top: 100px; }
+
+.index .newsletter-email > h2 {
+  color: #FFFFFF; }
+
+.index .bio {
+  min-height: 170px; }
+
+.index .bio-top {
+  margin-top: 20px; }
+
+.index .bio-image {
+  height: 160px;
+  width: 120px;
+  object-fit: cover;
+  position: absolute; }
+
+.index .bio-text {
+  margin-left: 160px; }
+
+.index .bio-text > p {
+  color: #999999;
+  margin-top: 10px; }
+
+.index .section-about .btn-preview-video, .index .section-about .oi {
+  background-color: #51A669;
+  color: #FFFFFF;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.index .subtext {
+  color: #999999; }
