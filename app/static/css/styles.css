@@ -111,6 +111,12 @@ input::placeholder {
   .navbar .btn-right {
     margin-right: -16px; }
 
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #51A669;
+  z-index: 99; }
+
 .page-footer {
   background-color: #51A669;
   padding-top: 80px;
