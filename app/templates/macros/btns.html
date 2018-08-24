@@ -1,0 +1,12 @@
+{% macro btn_get_started() %}
+<a class="btn btn-primary" href="{{ url_for('application_email') }}">Get Started</a>
+{% endmacro %}
+
+
+{% macro btn_preview_video() %}
+<a class="btn btn-preview-video" href="#">
+    <img class="img-preview-video" src="{{ url_for('static', filename='img/preview-video.png') }}" />
+    <span class="oi oi-caret-right" aria-hidden="true"></span>
+    Watch Video
+</a>
+{% endmacro %}

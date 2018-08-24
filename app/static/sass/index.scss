@@ -55,15 +55,8 @@
         margin-bottom: 80px;
     }
 
-    .poster-top {
-        margin-top: 20px;
-    }
-
     $image-width: 120px;
     .poster-image {
-        background-image: url($img_path + 'posters/poster-full-time.png');
-        background-size: contain;
-        height: 160px;
         width: $image-width;
         position: absolute;
     }
@@ -83,6 +76,22 @@
     .poster-subtitle {
         font-size: $text-large;
         margin-top: 10px;
+    }
+
+    // Mini Posters
+    .poster-mini {
+        margin-bottom: 60px;
+    }
+
+    .poster-mini-image {
+        width: 80px;
+        display: block;
+        margin-bottom: 16px;
+    }
+
+    .poster-mini-subtitle {
+        color: $gray;
+        margin-top: 8px;
     }
 
     // Section breaks
@@ -111,7 +120,7 @@
     $logo-box-height: 160px;
     .logo-box {
         display: inline-block;
-        width: 230px;
+        width: 210px;
         height: $logo-box-height;
         background-color: $light-gray;
         margin: 18px;
@@ -157,6 +166,7 @@
     .bio-image {
         height: $image-height;
         width: $image-width;
+        object-fit: cover;
         position: absolute;
     }
 
@@ -167,5 +177,20 @@
     .bio-text>p {
         color: $gray;
         margin-top: 10px;
+    }
+
+    // About Section
+    .section-about {
+        .btn-preview-video, .oi {
+            background-color: $green;
+            color: $white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    // Other
+    .subtext {
+        color: $gray;
     }
 }

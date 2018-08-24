@@ -96,6 +96,17 @@ input::placeholder {
     margin-top: 80px;
     margin-bottom: 60px;
 
+
+    $col-margin: 42px;
+    .qa-left {
+        margin-right: $col-margin;
+    }
+
+    .qa-right {
+        margin-left: $col-margin;
+        margin-top: 200px;
+    }
+
     .question, .answer {
         font-size: $title-large;
         margin-bottom: 40px;

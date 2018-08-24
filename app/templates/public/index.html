@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% from 'macros/index.html' import poster, btn_get_started, bio %}
+{% from 'macros/posters.html' import poster, poster_mini %}
+{% from 'macros/bio.html' import bio %}
+{% from 'macros/btns.html' import btn_get_started, btn_preview_video %}
 
 {% block description %}Get ahead by learning from successful entrepreneurs.{% endblock %}
 
@@ -17,11 +19,7 @@
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
           </span>
 
-          <a class="btn btn-preview-video" href="#">
-            <img class="img-preview-video" src="{{ url_for('static', filename='img/preview-video.png') }}" />
-            <span class="oi oi-caret-right" aria-hidden="true"></span>
-            Watch Video
-          </a>
+          {{ btn_preview_video() }}
         </div>
       </div>
     </div>
@@ -30,33 +28,37 @@
   <div class="section-qa container">
     <div class="row">
       <div class="col-md-6">
-        <p class="question">
-          What is the Applied Entrepreneurship Program?
-        </p>
-        <p class="answer">
-          &ldquo;The program is designed to expand your ability to push ideas forward on your own&rdquo;
-        </p>
+        <div class="qa-left">
+          <p class="question">
+            What is the Applied Entrepreneurship Program?
+          </p>
+          <p class="answer">
+            &ldquo;The program is designed to expand your ability to push ideas forward on your own&rdquo;
+          </p>
+        </div>
       </div>
 
-      <div class="col-md-6">
-        {{
-          poster(
-          'Full-Time',
-          'Challenge yourself with an immersive learning experience.',
-          ['4 day intensive program', 'Next session: October 22-25', '$12,500 tuition']) 
-        }}
-        {{
-          poster(
-          'Part-Time',
-          'Learn valuable skills on weeknights or weekends.',
-          ['10 week course', 'Starting October 25', '$12,500']) 
-        }}
-        {{
-          poster(
-          'Online',
-          'Study online at your own pace.',
-          ['40 hours of video tutorials & assignments', '$4,500'])
-        }}
+      <div class="col-md-6 ">
+        <div class="qa-right">
+          {{
+            poster(
+            'Full-Time',
+            'Challenge yourself with an immersive learning experience.',
+            ['4 day intensive program', 'Next session: October 22-25', '$12,500 tuition']) 
+          }}
+          {{
+            poster(
+            'Part-Time',
+            'Learn valuable skills on weeknights or weekends.',
+            ['10 week course', 'Starting October 25', '$12,500']) 
+          }}
+          {{
+            poster(
+            'Online',
+            'Study online at your own pace.',
+            ['40 hours of video tutorials & assignments', '$4,500'])
+          }}
+        </div>
       </div>
     </div>
   </div>
@@ -66,32 +68,36 @@
   <div class="section-qa container">
     <div class="row">
       <div class="col-md-6">
-        <p class="question">
-          Where Do AE: Students Work?
-        </p>
-        <p class="answer">
-          &ldquo;Sed ut perspi ciatis unde omnis iste natus error sit voluptatem.&rdquo;
-        </p>
+        <div class="qa-left">
+          <p class="question">
+            Where Do AE: Students Work?
+          </p>
+          <p class="answer">
+            &ldquo;Sed ut perspi ciatis unde omnis iste natus error sit voluptatem.&rdquo;
+          </p>
+        </div>
       </div>
 
       <div class="col-md-6">
-        <div class="logo-box">
-          <div class="logo-img-container logo-wsj"></div>
-        </div>
-        <div class="logo-box">
-          <div class="logo-img-container logo-nike"></div>
-        </div>
-        <div class="logo-box">
-          <div class="logo-img-container logo-barkbox"></div>
-        </div>
-        <div class="logo-box">
-          <div class="logo-img-container logo-diageo"></div>
-        </div>
-        <div class="logo-box">
-          <div class="logo-img-container logo-novozymes"></div>
-        </div>
-        <div class="logo-box">
-          <div class="logo-img-container logo-carlsberg"></div>
+        <div class="qa-right">
+          <div class="logo-box">
+            <div class="logo-img-container logo-wsj"></div>
+          </div>
+          <div class="logo-box">
+            <div class="logo-img-container logo-nike"></div>
+          </div>
+          <div class="logo-box">
+            <div class="logo-img-container logo-barkbox"></div>
+          </div>
+          <div class="logo-box">
+            <div class="logo-img-container logo-diageo"></div>
+          </div>
+          <div class="logo-box">
+            <div class="logo-img-container logo-novozymes"></div>
+          </div>
+          <div class="logo-box">
+            <div class="logo-img-container logo-carlsberg"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -110,34 +116,106 @@
   <div class="section-qa container">
     <div class="row">
       <div class="col-md-6">
-        <p class="question">
-          What Courses Do You Offer?
-        </p>
-        <p class="answer">
-          &ldquo;The Applied Entrepreneurship curriculum is taught in 9 applicable modules.&rdquo;
-        </p>
-        {{ btn_get_started() }}
+        <div class="qa-left">
+          <p class="question">
+            What Courses Do You Offer?
+          </p>
+          <p class="answer">
+            &ldquo;The Applied Entrepreneurship curriculum is taught in 9 applicable modules.&rdquo;
+          </p>
+          {{ btn_get_started() }}
+        </div>
       </div>
 
       <div class="col-md-6">
-        {{
-          poster(
-          'Full-Time',
-          'Challenge yourself with an immersive learning experience.',
-          ['4 day intensive program', 'Next session: October 22-25', '$12,500 tuition']) 
-        }}
-        {{
-          poster(
-          'Part-Time',
-          'Learn valuable skills on weeknights or weekends.',
-          ['10 week course', 'Starting October 25', '$12,500']) 
-        }}
-        {{
-          poster(
-          'Online',
-          'Study online at your own pace.',
-          ['40 hours of video tutorials & assignments', '$4,500'])
-        }}
+        <div class="qa-right">
+          <div class="row">
+            <div class="col-md-6">
+              {{
+                poster_mini(
+                'Why entrepreneurship?',
+                'Sed ut perspiciatis unde omnis iste natus error sit volup tatem accus antium dolore',
+                'why') 
+              }}
+            </div>
+            <div class="col-md-6">
+              {{
+                poster_mini(
+                'How to spot an opportunity',
+                'Sed ut perspiciatis unde omnis iste natus error sit volup tatem accus antium dolore',
+                'opportunity')
+              }}
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              {{
+                poster_mini(
+                'How to listen to customers',
+                'Sed ut perspiciatis unde omnis iste natus error sit volup tatem accus antium dolore',
+                'customers')
+              }}
+            </div>
+            <div class="col-md-6">
+              {{
+                poster_mini(
+                'How to get buy-in to your idea',
+                'Sed ut perspiciatis unde omnis iste natus error sit volup tatem accus antium dolore',
+                'buy')
+              }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              {{
+                poster_mini(
+                'Pitch your idea',
+                'Sed ut perspiciatis unde omnis iste natus error sit volup tatem accus antium dolore',
+                'pitch')
+              }}
+            </div>
+            <div class="col-md-6">
+              {{
+                poster_mini(
+                'Wireframe your idea',
+                'Sed ut perspiciatis unde omnis iste natus error sit volup tatem accus antium dolore',
+                'framework')
+              }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              {{
+                poster_mini(
+                'Work with freelancers',
+                'Sed ut perspiciatis unde omnis iste natus error sit volup tatem accus antium dolore',
+                'freelancer')
+              }}
+            </div>
+            <div class="col-md-6">
+              {{
+                poster_mini(
+                'Introduction to signal mining',
+                'Sed ut perspiciatis unde omnis iste natus error sit volup tatem accus antium dolore',
+                'signal')
+              }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              {{
+                poster_mini(
+                'Write a 0-to-1 business plan',
+                'Sed ut perspiciatis unde omnis iste natus error sit volup tatem accus antium dolore',
+                'plan')
+              }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -163,34 +241,30 @@
   <div class="section-qa container">
     <div class="row">
       <div class="col-md-6">
-        <p class="question">
-          Is There Financial Aid?
-        </p>
-        <p class="answer">
-          &ldquo;The Applied Entrepreneurship curriculum is taught in 9 applicable modules.&rdquo;
-        </p>
-        {{ btn_get_started() }}
+        <div class="qa-left">
+          <p class="question">
+            Is There Financial Aid?
+          </p>
+          <p class="answer">
+            &ldquo;The Applied Entrepreneurship curriculum is taught in 9 applicable modules.&rdquo;
+          </p>
+          {{ btn_get_started() }}
+        </div>
       </div>
 
       <div class="col-md-6">
-        {{
-          poster(
-          'Full-Time',
-          'Challenge yourself with an immersive learning experience.',
-          ['4 day intensive program', 'Next session: October 22-25', '$12,500 tuition']) 
-        }}
-        {{
-          poster(
-          'Part-Time',
-          'Learn valuable skills on weeknights or weekends.',
-          ['10 week course', 'Starting October 25', '$12,500']) 
-        }}
-        {{
-          poster(
-          'Online',
-          'Study online at your own pace.',
-          ['40 hours of video tutorials & assignments', '$4,500'])
-        }}
+        <div class="qa-right">
+          {{
+            poster(
+            'Employee Sponsorship',
+            'Learn how to request financial support from your employer.') 
+          }}
+          {{
+            poster(
+            'Payment Plans',
+            'Take advantage of easy, low-cost financingplans.') 
+          }}
+        </div>
       </div>
     </div>
   </div>
@@ -200,18 +274,22 @@
   <div class="section-qa container">
     <div class="row">
       <div class="col-md-6">
-        <p class="question">
-          Who Are My Instructors?
-        </p>
-        <p class="answer">
-          &ldquo;Sed ut perspi ciatis unde omnis iste natus error sit voluptatem.&rdquo;
-        </p>
+        <div class="qa-left">
+          <p class="question">
+            Who Are My Instructors?
+          </p>
+          <p class="answer">
+            &ldquo;Sed ut perspi ciatis unde omnis iste natus error sit voluptatem.&rdquo;
+          </p>
+        </div>
       </div>
 
       <div class="col-md-6">
-        {{ bio('Philip Petersen', 'Partner at Prehype and co-founder of Crafted By and Whitespace', 'Philip has been building products and businesses for 20+ years. He also helps corporations and entrepreneurs co-create new businesses together. He thinks a lot about entrepreneurship and how it can help the world.', 'philip-petersen.jpeg') }}
+        <div class="qa-right">
+          {{ bio('Philip Petersen', 'Partner at Prehype and co-founder of Crafted By and Whitespace', 'Philip has been building products and businesses for 20+ years. He also helps corporations and entrepreneurs co-create new businesses together. He thinks a lot about entrepreneurship and how it can help the world.', 'philip-petersen.jpeg') }}
 
-        {{ bio('Dan Shipper', 'EIR at Prehype and co-founder of Firefly', 'Dan is an entrepreneur and writer living in New York City. He is currently consulting for several startups in NYC and working on an illustrated novella about entrepreneurship.', 'dan-shipper.jpeg') }}
+          {{ bio('Dan Shipper', 'EIR at Prehype and co-founder of Firefly', 'Dan is an entrepreneur and writer living in New York City. He is currently consulting for several startups in NYC and working on an illustrated novella about entrepreneurship.', 'dan-shipper.jpeg') }}
+        </div>
       </div>
     </div>
   </div>
@@ -219,20 +297,24 @@
   <div class="section-qa container">
     <div class="row">
       <div class="col-md-6">
-        <p class="question">
-          Are There Any Guest Speakers?
-        </p>
-        <p class="answer">
-          &ldquo;Yes.&rdquo;
-        </p>
+        <div class="qa-left">
+          <p class="question">
+            Are There Any Guest Speakers?
+          </p>
+          <p class="answer">
+            &ldquo;Yes.&rdquo;
+          </p>
+        </div>
       </div>
 
       <div class="col-md-6">
-        {{ bio('Saman Rahmanian', 'Co-founder Managed by Q and Roman', 'Having built and raised funding for two successful companies, Saman brings his expertise to our "Pitch Your Idea" class.', 'saman-rahmanian.jpeg') }}
+        <div class="qa-right">
+          {{ bio('Saman Rahmanian', 'Co-founder Managed by Q and Roman', 'Having built and raised funding for two successful companies, Saman brings his expertise to our "Pitch Your Idea" class.', 'saman-rahmanian.jpeg') }}
 
-        {{ bio('Leif Abraham', 'TBD', 'TBD', 'leif-abraham.jpeg') }}
+          {{ bio('Leif Abraham', 'TBD', 'TBD', 'leif-abraham.jpeg') }}
 
-        {{ bio('Henrik Werdelin', 'TBD', 'TBD', 'henrik-werdelin.jpeg') }}
+          {{ bio('Henrik Werdelin', 'TBD', 'TBD', 'henrik-werdelin.jpeg') }}
+        </div>
       </div>
     </div>
   </div>
@@ -243,6 +325,34 @@
         <div class="col-md-6">
           <div class="quote">&ldquo;Sed ut persp iciatis unde omnis ist natus error sit volupt atem accus antium ut persp iciatis unde omnis ist natus error sit volupt atem accus antium dolore mque.&rdquo;</div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-qa section-about container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="qa-left">
+          <p class="question">Applied Entrepreneurship and Prehype</p>
+          {{ btn_get_started() }}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <p>
+          The Institute of Applied Entrepreneurship was created by venture development company Prehype. Prehype is a network of entrepreneurs that launch companies by themselves or in collaboration with corporations. After building 45+ companies, we realized that there is a common methodology, process, and structure to getting any business off the ground. We created Applied Entrepreneurship to share those learnings with you.
+        </p>
+
+        {{ btn_preview_video() }}
+
+        <p class="subtext">
+          Our video series explains how you can apply entrepreneurship to any career and to your personal life.
+        </p>
+        <p class="subtext">
+          Together with entrepreneurs, non-profit executives, business professionals, investors and academics we outline a mindset and skillsets that can be used by anyone.
+        </p>
+        <p class="subtext">
+          The series has been created by Prehype and is currently available through The Wall Street Journal.
+        </p>
       </div>
     </div>
   </div>

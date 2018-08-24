@@ -1,0 +1,29 @@
+{% macro poster(title, subtitle, bullets) %}
+<div class="poster">
+  <img class="poster-image" src="{{ url_for('static', filename='img/posters/poster-' + title.lower().replace(' ', '-') + '.png') }}"></img>
+  <div class="poster-text">
+    <span class="poster-title">{{ title }}</span>
+    
+    <p class="poster-subtitle">{{ subtitle }}</p>
+    
+    {% if bullets %}
+    <ul>
+      {% for b in bullets %}
+      <li>{{ b }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <a class="btn btn-primary" href="{{ url_for('application_email') }}">Get Started</a>
+  </div>
+</div>
+{% endmacro %}
+
+
+{% macro poster_mini(title, subtitle, filename) %}
+<div class="poster-mini">
+  <img class="poster-mini-image" src="{{ url_for('static', filename='img/posters/poster-' + filename + '.png')}}"></img>
+  <span>{{ title }}</span>
+  <p class="poster-mini-subtitle">{{ subtitle }}</p>
+</div>
+{% endmacro %}
