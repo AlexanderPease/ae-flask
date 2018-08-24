@@ -1,11 +1,11 @@
 .index {
+    // Hero section
     .hero {
         background-image: url($img_path + 'hero_@2x.jpg');
-        background-size: 4096px 500px;
+        background-size: auto 120%;
         background-repeat: no-repeat;
         background-position: 50% 100%;
         background-color: $green;
-        padding: 0;
         height: 500px;
     }
 
@@ -18,8 +18,36 @@
     .hero-subtitle {
         size: 18px;
         color: $white;
-        margin-right: 80px;
         display: block;
+        margin-right: 80px;
+        margin-bottom: 30px;
+    }
+
+    .btn-preview-video {
+        background-color: $white;
+        color: $green;
+        height: 70px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+
+        &:hover {
+            color: $dark-green;
+        }
+    }
+
+    .img-preview-video {
+        height: 70px;
+        width: 115px;
+        display: inline-block;
+        margin-right: 30px;
+    }
+
+    .oi {
+        font-size: 16px;
+        margin-right: 4px;
+        background-color: $white;
+        color: $green;
     }
 
     // Posters

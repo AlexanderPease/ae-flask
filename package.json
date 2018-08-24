@@ -4,7 +4,7 @@
   "description": "Web app for Prehype Applied Entrepreneurship courses",
   "main": "index.js",
   "scripts": {
-        "scss": "node-sass --watch app/static/sass -o app/static/css"
+    "scss": "node-sass --watch app/static/sass -o app/static/css"
   },
   "keywords": [],
   "author": "Alexander Pease",
