@@ -70,7 +70,10 @@ input::placeholder {
   margin-top: 80px;
   margin-bottom: 60px; }
   .section-qa .qa-left {
-    margin-right: 42px; }
+    margin-right: 42px;
+    position: sticky;
+    top: 70px;
+    padding-top: 30px; }
   .section-qa .qa-right {
     margin-left: 42px;
     margin-top: 200px; }

@@ -100,6 +100,9 @@ input::placeholder {
     $col-margin: 42px;
     .qa-left {
         margin-right: $col-margin;
+        position: sticky;
+        top: 70px; // Ugly, height of navbar
+        padding-top: 30px;
     }
 
     .qa-right {
