@@ -52,7 +52,7 @@
 
     // Posters
     .poster {
-        margin-bottom: 50px;
+        margin-bottom: 80px;
     }
 
     .poster-top {
@@ -88,6 +88,7 @@
     // Section breaks
     .divider-1 {
         background-image: url($img_path + 'divider_001_@2x.jpg');
+        background-position: 50% 100%;
     }
 
     .divider-2 {
@@ -107,28 +108,29 @@
     }
 
     // Logos
+    $logo-box-height: 160px;
     .logo-box {
         display: inline-block;
         width: 230px;
-        height: 160px;
+        height: $logo-box-height;
         background-color: $light-gray;
-        background-size: cover;
         margin: 18px;
-        text-align: center;
     }
 
     .logo-img-container {
-        // background-image: url($img_path + 'logo-wsj.png');
-        // // background-repeat: no-repeat;
-        // // background-size: cover;
-        width: 150px; 
-        height: 100px;
-        margin-top: 30px;
-        background-color:red;
+        background-repeat: no-repeat;
+        background-size: 120px;
+        background-position: 50%;
+        width: 100%; 
+        height: 60px;
+        margin-top: 50px;
     }
 
-    .logo-image>img {
-        width:100%
+    $companies: ['wsj', 'nike', 'barkbox', 'diageo', 'novozymes', 'carlsberg'];
+    @each $company in $companies {
+        .logo-#{$company} {
+            background-image: url($img_path + 'logos/logo-' + $company + '.png');
+        }
     }
 
     // Newsletter form

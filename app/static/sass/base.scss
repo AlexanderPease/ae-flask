@@ -107,10 +107,16 @@ input::placeholder {
 }
 
 .section-break {
-    height: 300px;
+    height: 400px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
 }
 
 .section-quote {
+    height: 600px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+
     .quote {
         margin-top: 200px;
         margin-bottom: 80px;
