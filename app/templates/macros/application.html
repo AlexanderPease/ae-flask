@@ -1,0 +1,10 @@
+{% macro application_steps(step) %}
+<div class="{% if step == 1 %}step-active{% else %}step-complete{% endif %}">
+    <span class="step">Step 1</span>
+    <span class="step step-break">Basic Information</span>
+</div>
+<div class="{% if step == 1 %}step-inactive{% else %}step-active{% endif %}">
+    <span class="step">Step 2</span>
+    <span class="step">Professional Info</span>
+</div>
+{% endmacro %}

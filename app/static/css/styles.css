@@ -3,8 +3,7 @@ body {
   font-family: Helvetica;
   color: #000000; }
 
-h1, h2, h3, p, span, .btn {
-  font-family: Helvetica;
+h1, h2, h3, p, span, .btn, label {
   font-family: Helvetica;
   font-weight: 700;
   color: #000000; }
@@ -51,16 +50,21 @@ ul {
 .btn-secondary {
   background-color: #000000; }
 
-.form-control {
+.form-control, .form-control:focus {
   border-radius: 0;
+  background-color: #F2F2F2;
+  color: #000000; }
+  .form-control:focus, .form-control:focus:focus {
+    box-shadow: none;
+    border: 1px solid #999999; }
+  .form-control::placeholder, .form-control:focus::placeholder {
+    color: #999999; }
+
+.form-negative {
   border: none;
   height: auto; }
-  .form-control:focus {
-    box-shadow: none;
-    border: none; }
-
-input::placeholder {
-  color: #F2F2F2; }
+  .form-negative::placeholder {
+    color: #F2F2F2; }
 
 .input-group-append > .btn {
   padding-top: 20px;
@@ -102,7 +106,8 @@ input::placeholder {
 .navbar {
   background-color: #FFFFFF;
   padding-top: 0;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  border-bottom: 1px solid #F2F2F2; }
   .navbar .navbar-brand {
     font-size: 24px;
     color: #000000;
@@ -117,7 +122,6 @@ input::placeholder {
 .navbar-sticky {
   position: sticky;
   top: 0;
-  border-bottom: 1px solid #51A669;
   z-index: 99; }
 
 .page-footer {
@@ -144,7 +148,7 @@ input::placeholder {
     padding-top: 10px;
     padding-bottom: 10px; }
 
-.index .hero {
+.index-page .hero {
   background-image: url("../img/hero_@2x.jpg");
   background-size: auto 120%;
   background-repeat: no-repeat;
@@ -152,96 +156,96 @@ input::placeholder {
   background-color: #51A669;
   height: 500px; }
 
-.index h1.hero-title {
+.index-page h1.hero-title {
   margin-top: 90px;
   margin-bottom: 20px;
   color: #FFFFFF; }
 
-.index .hero-subtitle {
+.index-page .hero-subtitle {
   size: 18px;
   color: #FFFFFF;
   display: block;
   margin-right: 80px;
   margin-bottom: 30px; }
 
-.index .btn-preview-video {
+.index-page .btn-preview-video {
   background-color: #FFFFFF;
   color: #51A669;
   height: 70px;
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 0; }
-  .index .btn-preview-video:hover {
+  .index-page .btn-preview-video:hover {
     color: #346D44; }
 
-.index .img-preview-video {
+.index-page .img-preview-video {
   height: 70px;
   width: 115px;
   display: inline-block;
   margin-right: 30px; }
 
-.index .oi {
+.index-page .oi {
   font-size: 16px;
   margin-right: 4px;
   background-color: #FFFFFF;
   color: #51A669; }
 
-.index .poster {
+.index-page .poster {
   margin-bottom: 80px; }
 
-.index .poster-image {
+.index-page .poster-image {
   width: 120px;
   position: absolute; }
 
-.index .poster-text {
+.index-page .poster-text {
   margin-left: 160px; }
 
-.index .poster-text > ul {
+.index-page .poster-text > ul {
   font-size: 18px; }
 
-.index .poster-title {
+.index-page .poster-title {
   font-size: 36px; }
 
-.index .poster-subtitle {
+.index-page .poster-subtitle {
   font-size: 18px;
   margin-top: 10px; }
 
-.index .poster-mini {
+.index-page .poster-mini {
   margin-bottom: 60px; }
 
-.index .poster-mini-image {
+.index-page .poster-mini-image {
   width: 80px;
   display: block;
   margin-bottom: 16px; }
 
-.index .poster-mini-subtitle {
+.index-page .poster-mini-subtitle {
   color: #999999;
   margin-top: 8px; }
 
-.index .divider-1 {
+.index-page .divider-1 {
   background-image: url("../img/divider_001_@2x.jpg");
   background-position: 50% 100%; }
 
-.index .divider-2 {
+.index-page .divider-2 {
   background-image: url("../img/divider_002_@2x.jpg"); }
 
-.index .divider-3 {
+.index-page .divider-3 {
   background-image: url("../img/form_@2x.jpg"); }
 
-.index .quote-1 {
+.index-page .quote-1 {
   background-image: url("../img/quote_001_@2x.jpg"); }
 
-.index .quote-2 {
+.index-page .quote-2 {
   background-image: url("../img/quote_002_@2x.jpg"); }
 
-.index .logo-box {
+.index-page .logo-box {
   display: inline-block;
   width: 210px;
   height: 160px;
   background-color: #F2F2F2;
   margin: 18px; }
 
-.index .logo-img-container {
+.index-page .logo-img-container {
   background-repeat: no-repeat;
   background-size: 120px;
   background-position: 50%;
@@ -249,54 +253,79 @@ input::placeholder {
   height: 60px;
   margin-top: 50px; }
 
-.index .logo-wsj {
+.index-page .logo-wsj {
   background-image: url("../img/logos/logo-wsj.png"); }
 
-.index .logo-nike {
+.index-page .logo-nike {
   background-image: url("../img/logos/logo-nike.png"); }
 
-.index .logo-barkbox {
+.index-page .logo-barkbox {
   background-image: url("../img/logos/logo-barkbox.png"); }
 
-.index .logo-diageo {
+.index-page .logo-diageo {
   background-image: url("../img/logos/logo-diageo.png"); }
 
-.index .logo-novozymes {
+.index-page .logo-novozymes {
   background-image: url("../img/logos/logo-novozymes.png"); }
 
-.index .logo-carlsberg {
+.index-page .logo-carlsberg {
   background-image: url("../img/logos/logo-carlsberg.png"); }
 
-.index .newsletter-email {
+.index-page .newsletter-email {
   margin-top: 100px; }
 
-.index .newsletter-email > h2 {
+.index-page .newsletter-email > h2 {
   color: #FFFFFF; }
 
-.index .bio {
+.index-page .bio {
   min-height: 170px; }
 
-.index .bio-top {
+.index-page .bio-top {
   margin-top: 20px; }
 
-.index .bio-image {
+.index-page .bio-image {
   height: 160px;
   width: 120px;
   object-fit: cover;
   position: absolute; }
 
-.index .bio-text {
+.index-page .bio-text {
   margin-left: 160px; }
 
-.index .bio-text > p {
+.index-page .bio-text > p {
   color: #999999;
   margin-top: 10px; }
 
-.index .section-about .btn-preview-video, .index .section-about .oi {
+.index-page .section-about .btn-preview-video, .index-page .section-about .oi {
   background-color: #51A669;
   color: #FFFFFF;
   margin-top: 20px;
   margin-bottom: 20px; }
 
-.index .subtext {
+.index-page .subtext {
   color: #999999; }
+
+.application-page {
+  background-color: #F2F2F2; }
+  .application-page .application-left, .application-page .application-right {
+    padding-top: 40px;
+    padding-bottom: 80px; }
+  .application-page .application-right {
+    background-color: #FFFFFF;
+    padding-left: 60px;
+    padding-right: 60px; }
+  .application-page h2 {
+    margin-bottom: 30px; }
+  .application-page .form-control {
+    margin-bottom: 30px; }
+  .application-page .step {
+    display: block;
+    margin-bottom: 6px; }
+  .application-page .step-break {
+    margin-bottom: 30px; }
+  .application-page .step-inactive > span {
+    color: #999999; }
+  .application-page .step-active > span {
+    color: #000000; }
+  .application-page .step-complete > span {
+    color: #51A669; }

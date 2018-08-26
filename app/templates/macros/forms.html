@@ -1,0 +1,10 @@
+{% macro form_group(field, placeholder='') %}
+<div class="form-group" id="form-group-{{ field.id }}">
+  {{ field.label }}
+  {{ field(class='form-control', placeholder=placeholder) }}
+
+  {% for error in field.errors %}
+  <span class="required">{{ error }}</span>
+  {% endfor %}
+</div>
+{% endmacro %}

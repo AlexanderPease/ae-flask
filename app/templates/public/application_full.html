@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% from 'macros/application.html' import application_steps %}
+{% from 'macros/forms.html' import form_group %}
+
+{% block description %}Step 1{% endblock %}
+
+{% block body %}
+<div class="application-page">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="application-left">
+        <div class="row">
+          <div class="offset-md-3 col-md-6">
+            <h2>Get Started</h2>
+            {{ application_steps(step) }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="application-right">
+        <h2>Step 2: Professional Information</h2>
+
+        <form method="POST">
+          {{ form.hidden_tag() }}
+          <div class="row">
+            <div class="col-md-6">
+              {{ form_group(form.company) }}
+            </div>
+            <div class="col-md-6">
+              {{ form_group(form.age) }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              {{ form_group(form.employment_status) }}
+            </div>
+            <div class="col-md-6">
+              {{ form_group(form.academic_degree) }}
+            </div>
+          </div>
+          {{ form_group(form.entrepreneurial_essay) }}
+          {{ form_group(form.problem_essay) }}
+
+          <button class="btn btn-primary" href="{{ url_for('application_email') }}" type="submit">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

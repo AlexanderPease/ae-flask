@@ -1,0 +1,44 @@
+.application-page {
+    background-color: $light-gray;
+    
+    .application-left, .application-right {
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
+
+    .application-right {
+        background-color: $white;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    .form-control {
+        margin-bottom: 30px;
+    }
+
+    .step {
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .step-break {
+        margin-bottom: 30px;
+    }
+
+    .step-inactive>span {
+        color: $gray;
+    }
+
+    .step-active>span {
+        color: $black;
+    }
+
+    .step-complete>span {
+        color: $green;
+    }
+
+}

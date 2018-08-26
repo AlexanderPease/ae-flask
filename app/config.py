@@ -8,10 +8,10 @@ VARS = {
     'FLASK_LOG_LEVEL': 'DEBUG',
     'PRODUCT_NAME': 'Applied Entrepreneurship',
     'TEMPLATES_AUTO_RELOAD': True
-    # 'SECRET_KEY': 'secret key',
 }
 
 ENV_VARS = [
     'DEBUG',
     'FLASK_LOG_LEVEL',
+    'SECRET_KEY'
 ]

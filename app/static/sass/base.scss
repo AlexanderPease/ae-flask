@@ -5,8 +5,7 @@ body {
     color: $black;
 }
 
-h1, h2, h3, p, span, .btn {
-    font-family: $font-family;
+h1, h2, h3, p, span, .btn, label {
     font-family: $font-family;
     font-weight: 700;
     color: $black;
@@ -71,20 +70,36 @@ ul {
     background-color: $black;
 }
 
-.form-control {
+
+// Forms
+.form-control, .form-control:focus {
     border-radius: 0;
-    border: none;
-    height: auto;
+    background-color: $light-gray;
+    color: $black;
 
     &:focus {
         box-shadow: none;
-        border: none;
+        border: 1px solid $gray;
+    }
+
+    &::placeholder {
+        color: $gray;
     }
 }
 
-input::placeholder {
-    color: $light-gray;
+.form-negative {
+
+    border: none;
+    height: auto;
+
+    &::placeholder {
+        color: $light-gray;
+    }
 }
+
+// input::placeholder {
+//     color: $light-gray;
+// }
 
 .input-group-append>.btn {
     padding-top: 20px;
