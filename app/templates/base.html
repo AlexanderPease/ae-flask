@@ -20,13 +20,15 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-sticky">
+  <nav class="navbar {% if navbar_sticky %}navbar-sticky{% endif %}">
     <a class="navbar-brand mr-auto" href="{{ url_for('index') }}">
       Applied<br/>Entrepreneurship<span class="colon-text">:</span>
     </a>
+    {% if not current_user or navbar_get_started %}
     <a class="btn btn-primary btn-right my-2 my-sm-0" href="{{ url_for('application_email') }}">
       Get Started
     </a>
+    {% endif %}
   </nav>
 
   {% block body %}{% endblock %}

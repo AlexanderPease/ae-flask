@@ -15,7 +15,9 @@ mod = Blueprint('public', __name__)
 def index():
     return render_template(
         'public/index.html',
-        form=NewsletterForm())
+        form=NewsletterForm(),
+        navbar_sticky=True,
+        navbar_get_started=True)
 
 
 @app.route('/apply', methods=['GET', 'POST'])
