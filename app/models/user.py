@@ -16,4 +16,28 @@ class User(db.Document):
     problems_essay = db.StringField()
 
     def __str__(self):
-        return f'{self.first} {self.last_name}'
+        return f'{self.first_name} {self.last_name}'
+
+    ###########################################################################
+    # flask_login required methods
+    ###########################################################################
+    @property
+    def is_authenticated(self):
+        return True
+
+    @property
+    def is_active(self):
+        return True
+
+    @property
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        """Returns document id as string."""
+        return str(self.id)
+    
+
+    # def self(self):
+    #     """Returns MongoEngine object, not the proxy wrap revealed by Login."""
+    #     return self

@@ -23,7 +23,6 @@ def register_app_config(app):
             app.config[var] = os.environ.get(var)
     app.secret_key = app.config.get('SECRET_KEY')
     db.init_app(app)
-    print(app.config['MONGODB_HOST'])
 
 
 def register_blueprints(app):
@@ -34,6 +33,18 @@ def register_blueprints(app):
 def register_login(app):
     login_manager = LoginManager()
     login_manager.init_app(app)
+
+    from app.models.user import User
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        """Loads active User object for LoginManager."""
+        print('load user')
+        return User.objects.get(id=user_id)
+        # try:
+        #     return User.objects.get(id=user_id)
+        # except (DoesNotExist, ValidationError):
+        #     return None
 
 ###############################################################################
 # Main app setup

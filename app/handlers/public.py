@@ -1,6 +1,6 @@
 from flask import current_app as app
 from flask import Blueprint, redirect, render_template, session, url_for
-from flask_login import current_user
+from flask_login import current_user, login_user
 
 from app.forms.application import ApplicationEmailForm, ApplicationFullForm
 from app.forms.newsletter import NewsletterForm
@@ -45,7 +45,10 @@ def application_full():
 
     if form.validate_on_submit():
         # Update current user
-        form.populate_obj(current_user)
+        print('current user?')
+        print(f'current_user {current_user}')
+        form.populate_obj(current_user.self())
+        print(current_user.company)
         current_user.save()
         return redirect(url_for('application_success'))
 
