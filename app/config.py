@@ -13,5 +13,6 @@ VARS = {
 ENV_VARS = [
     'DEBUG',
     'FLASK_LOG_LEVEL',
-    'SECRET_KEY'
+    'SECRET_KEY',
+    'MONGODB_HOST'
 ]

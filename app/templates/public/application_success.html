@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% from 'macros/application.html' import application_steps %}
+{% from 'macros/forms.html' import form_group %}
+
+{% block description %}Application Submitted{% endblock %}
+
+{% block body %}
+<div class="application-page">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="application-left">
+        <div class="row">
+          <div class="offset-md-3 col-md-6">
+            <h2>Get Started</h2>
+            {{ application_steps(step) }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="application-right">
+        <h2 class="">Thank You!<br/>Your application has been submitted.</h2>
+        <p>We will contact your shortly with our admissions decision.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

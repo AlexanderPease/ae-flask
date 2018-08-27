@@ -3,7 +3,7 @@
     <span class="step">Step 1</span>
     <span class="step step-break">Basic Information</span>
 </div>
-<div class="{% if step == 1 %}step-inactive{% else %}step-active{% endif %}">
+<div class="{% if step == 1 %}step-inactive{% elif step == 2 %}step-active{% else %}step-complete{% endif %}">
     <span class="step">Step 2</span>
     <span class="step">Professional Info</span>
 </div>
