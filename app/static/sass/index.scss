@@ -208,6 +208,29 @@
         }
     }
 
+    // Quotes 
+
+    .section-quote {
+        height: 600px;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+
+        .quote {
+            margin-top: 200px;
+            margin-bottom: 14px;
+            color: $white;
+            font-size: $title-medium;
+            font-weight: 700;
+        }
+
+        .quote-author {
+            margin-left: 200px;
+            color: $white;
+            font-weight: 700;
+            font-size: $text;
+        }
+    }
+
     // Other
     .qa-financial-aid-right>.poster {
         margin-bottom: 100px;

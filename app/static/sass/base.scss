@@ -72,7 +72,7 @@ ul {
 
 
 // Forms
-.form-control, .form-control:focus {
+.form-control {
     border-radius: 0;
     background-color: $light-gray;
     color: $black;
@@ -88,12 +88,11 @@ ul {
 }
 
 .form-negative {
-
     border: none;
     height: auto;
 
-    &::placeholder {
-        color: $light-gray;
+    &:focus {
+        border: none;
     }
 }
 
@@ -143,18 +142,4 @@ ul {
     height: 400px;
     background-size: auto 100%;
     background-repeat: no-repeat;
-}
-
-.section-quote {
-    height: 600px;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-
-    .quote {
-        margin-top: 200px;
-        margin-bottom: 80px;
-        color: $white;
-        font-size: $title-medium;
-        font-weight: 700;
-    }
 }
