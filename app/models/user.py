@@ -10,7 +10,7 @@ class User(db.Document):
     company = db.StringField()
     employment_status = db.StringField()
     academic_degree = db.StringField()
-    age = db.StringField()
+    age = db.IntField()
 
     entrepreneurial_essay = db.StringField()
     problems_essay = db.StringField()
@@ -34,10 +34,4 @@ class User(db.Document):
         return False
 
     def get_id(self):
-        """Returns document id as string."""
         return str(self.id)
-    
-
-    # def self(self):
-    #     """Returns MongoEngine object, not the proxy wrap revealed by Login."""
-    #     return self

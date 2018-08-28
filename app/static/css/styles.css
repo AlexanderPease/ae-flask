@@ -70,6 +70,9 @@ ul {
   padding-top: 20px;
   padding-bottom: 20px; }
 
+.required {
+  color: #FF0000; }
+
 .section-qa {
   margin-top: 80px;
   margin-bottom: 60px; }
@@ -317,8 +320,10 @@ ul {
     min-height: 310px; }
   .application-page h2 {
     margin-bottom: 30px; }
-  .application-page .form-control {
+  .application-page .form-group {
     margin-bottom: 30px; }
+  .application-page .form-control {
+    margin-bottom: 10px; }
   .application-page .step {
     display: block;
     margin-bottom: 6px; }

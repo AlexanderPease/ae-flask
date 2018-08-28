@@ -26,6 +26,8 @@ def register_app_config(app):
 
 
 def register_blueprints(app):
+    # Not working because app.register_blueprints called before mod defined?
+    # https://stackoverflow.com/questions/37954472/register-blueprint-doesnt-add-route-to-flask-app
     from app.handlers.public import mod as public_module
     app.register_blueprint(public_module)
 

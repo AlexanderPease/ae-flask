@@ -16,7 +16,11 @@ class ApplicationEmailForm(Form):
 class ApplicationFullForm(Form):
     """Step 2: Professional Info."""
     company = TextField('Company', [Required()])
-    age = IntegerField('Age', [Required()])
+    age = SelectField(
+        'Age',
+        [Required()],
+        choices=[(i,i) for i in range(18, 100)],
+        coerce=int)
     employment_status = SelectField(
         'Employment Status',
         [Required()],

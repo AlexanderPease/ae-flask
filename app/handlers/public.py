@@ -47,10 +47,7 @@ def application_full():
 
     if form.validate_on_submit():
         # Update current user
-        print('current user?')
-        print(f'current_user {current_user}')
-        form.populate_obj(current_user.self())
-        print(current_user.company)
+        form.populate_obj(current_user)
         current_user.save()
         return redirect(url_for('application_success'))
 
