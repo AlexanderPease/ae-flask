@@ -211,12 +211,10 @@
     // Quotes 
 
     .section-quote {
-        height: 600px;
-        background-size: auto 100%;
-        background-repeat: no-repeat;
+        background-size: cover;
 
         .quote {
-            margin-top: 200px;
+            margin-top: 150px;
             margin-bottom: 14px;
             color: $white;
             font-size: $title-medium;
