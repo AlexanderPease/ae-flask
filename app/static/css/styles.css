@@ -305,6 +305,19 @@ ul {
   margin-top: 20px;
   margin-bottom: 20px; }
 
+.index-page .section-about .qa-right {
+  margin-top: 100px; }
+
+.index-page .section-about-alt {
+  margin-top: 80px;
+  margin-bottom: 60px; }
+  .index-page .section-about-alt h2 {
+    text-align: center;
+    margin-bottom: 20px; }
+  .index-page .section-about-alt .btn-preview-video {
+    position: absolute;
+    right: 50px; }
+
 .index-page .qa-financial-aid-right > .poster {
   margin-bottom: 100px; }
 
