@@ -13,7 +13,22 @@ $red: #FF0000;
 $font-family: Helvetica;
 $title-large: 48px;
 $title-medium: 36px;
+$title-mobile: 30px;
 $title-small: 24px;
 $text-large: 18px;
 $text: 14px;
 $text-small: 11px;
+
+// Layout
+$width-sm: 768px;
+$width-md: 992px;
+$width-lg: 1200px;
+
+$max-width-sm: $width-sm - 1;
+$min-width-sm: $width-sm; // alias
+
+$max-width-md: $width-md - 1;
+$min-width-md: $width-md; // alias
+
+$max-width-lg: $width-lg - 1;
+$min-width-lg: $width-lg; // alias

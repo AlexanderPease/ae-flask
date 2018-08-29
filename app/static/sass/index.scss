@@ -7,16 +7,26 @@
         background-position: 50% 100%;
         background-color: $green;
         height: 500px;
+
+        @media (max-width: $max-width-sm) {
+            background-position: 15% 0%;
+        }
     }
 
     h1.hero-title {
         margin-top: 90px;
         margin-bottom: 20px;
         color: $white;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $title-medium;
+            margin-top: 50px;
+        }
     }
 
     .hero-subtitle {
-        size: 18px;
+        size: $text-large;
+        line-height: 1.3em;
         color: $white;
         display: block;
         margin-right: 80px;
@@ -53,29 +63,50 @@
     // Posters
     .poster {
         margin-bottom: 80px;
+
+        @media (max-width: $max-width-sm) {
+            margin-bottom: 40px;
+        }
     }
 
     $image-width: 120px;
+    $image-margin: 40px;
+    @media (max-width: $max-width-sm) {
+        $image-width: 70px;
+        $image-margin: 20px;
+    }
     .poster-image {
         width: $image-width;
         position: absolute;
     }
 
     .poster-text {
-        margin-left: $image-width + 40px;
+        margin-left: $image-width + $image-margin;
     }
 
     .poster-text>ul {
         font-size: $text-large;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $text;
+        }
     }
 
     .poster-title {
         font-size: $title-medium;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $text-large;
+        }
     }
 
     .poster-subtitle {
         font-size: $text-large;
         margin-top: 10px;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $text;
+        }
     }
 
     // Mini Posters
@@ -98,6 +129,10 @@
     .divider-1 {
         background-image: url($img_path + 'divider_001_@2x.jpg');
         background-position: 50% 100%;
+
+        @media (max-width: $max-width-sm) {
+            background-position-x: 45%;
+        }
     }
 
     .divider-2 {
@@ -209,7 +244,6 @@
     }
 
     // Quotes 
-
     .section-quote {
         background-size: cover;
 
