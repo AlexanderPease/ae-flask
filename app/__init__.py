@@ -1,13 +1,17 @@
 # Base file for initiating flask app
 import os
 from dotenv import load_dotenv
+from mongoengine import ValidationError
+from mongoengine.queryset import DoesNotExist
 
 from flask import Flask
 from flask_login import LoginManager
 from app.config import VARS, ENV_VARS
+from app.extensions import register_extensions
 from app.models import db
 
 app = Flask(__name__)
+
 
 ###############################################################################
 # Config
@@ -41,12 +45,16 @@ def register_login(app):
     @login_manager.user_loader
     def load_user(user_id):
         """Loads active User object for LoginManager."""
-        print('load user')
-        return User.objects.get(id=user_id)
-        # try:
-        #     return User.objects.get(id=user_id)
-        # except (DoesNotExist, ValidationError):
-        #     return None
+        try:
+            return User.objects.get(id=user_id)
+        except (DoesNotExist, ValidationError):
+            return None
+
+
+def register_signals(app):
+    from app.lib.signals import register_signals
+
+    register_signals()
 
 ###############################################################################
 # Main app setup
@@ -58,8 +66,10 @@ def create_app():
     # Configure app
     with app.app_context():
         register_app_config(app)
+        register_extensions(app)
         register_blueprints(app)
         register_login(app)
+        register_signals(app)
 
     return app
 
