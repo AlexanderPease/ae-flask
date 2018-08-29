@@ -25,7 +25,7 @@
 {% macro poster_mini(title, subtitle, filename) %}
 <div class="poster-mini">
   <img class="poster-mini-image" src="{{ url_for('static', filename='img/posters/poster-' + filename + '.png')}}"></img>
-  <span>{{ title }}</span>
+  <span class="poster-mini-title">{{ title }}</span>
   <p class="poster-mini-subtitle">{{ subtitle }}</p>
 </div>
 {% endmacro %}

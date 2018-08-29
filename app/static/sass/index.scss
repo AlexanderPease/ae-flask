@@ -2,11 +2,11 @@
     // Hero section
     .hero {
         background-image: url($img_path + 'hero_@2x.jpg');
-        background-size: auto 120%;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 100%;
         background-color: $green;
-        height: 500px;
+        height: 440px;
 
         @media (max-width: $max-width-sm) {
             background-position: 15% 0%;
@@ -69,19 +69,21 @@
         }
     }
 
-    $image-width: 120px;
-    $image-margin: 40px;
-    @media (max-width: $max-width-sm) {
-        $image-width: 70px;
-        $image-margin: 20px;
-    }
     .poster-image {
-        width: $image-width;
+        width: 120px;
         position: absolute;
+
+        @media (max-width: $max-width-sm) {
+            width: 70px;
+        }
     }
 
     .poster-text {
-        margin-left: $image-width + $image-margin;
+        margin-left: 120px + 40px;
+
+        @media (max-width: $max-width-sm) {
+            margin-left: 90px;
+        }
     }
 
     .poster-text>ul {
@@ -125,6 +127,24 @@
         margin-top: 8px;
     }
 
+    @media (max-width: $max-width-sm) {
+        .poster-mini {
+            min-height: 100px;  
+            margin-bottom: 30px;
+        }
+
+        $mini-image-width: 80px;
+        .poster-mini-image {
+            width: $mini-image-width;
+            position: absolute;
+            left: 0;
+        }
+
+        .poster-mini-title, .poster-mini-subtitle {
+            margin-left: $mini-image-width + 20px;
+        }
+    }
+
     // Section breaks
     .divider-1 {
         background-image: url($img_path + 'divider_001_@2x.jpg');
@@ -152,13 +172,24 @@
     }
 
     // Logos
-    $logo-box-height: 160px;
+    .logo-row {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
     .logo-box {
         display: inline-block;
-        width: 210px;
-        height: $logo-box-height;
+        width: 100%;
+        height: 160px;
         background-color: $light-gray;
-        margin: 18px;
+
+        @media (min-width: $min-width-sm) {
+            margin: 18px;
+        }
+
+        @media (max-width: $max-width-sm) {
+            height: 140px;
+        }
     }
 
     .logo-img-container {
@@ -168,6 +199,11 @@
         width: 100%; 
         height: 60px;
         margin-top: 50px;
+
+        @media (max-width: $max-width-sm) {
+            background-size: 100px;
+            margin-top: 40px;
+        }
     }
 
     $companies: ['wsj', 'nike', 'barkbox', 'diageo', 'novozymes', 'carlsberg'];
@@ -180,10 +216,18 @@
     // Newsletter form
     .newsletter-email {
         margin-top: 100px;
+
+        @media (max-width: $max-width-sm) {
+            margin-top: 40px;
+        }
     }
 
     .newsletter-email>h2 {
         color: $white;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $title-small;
+        }
     }
 
     // Bios
@@ -192,10 +236,11 @@
 
     .bio {
         min-height: $image-height + 10px;
+        margin-bottom: 30px;
     }
 
     .bio-top {
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     .bio-image {
@@ -212,6 +257,16 @@
     .bio-text>p {
         color: $gray;
         margin-top: 10px;
+    }
+
+    // Financial Aid
+    .section-financial-aid {
+
+        @media (max-width: $max-width-sm) {
+            .btn-primary {
+                margin-bottom: 20px;    
+            }
+        }
     }
 
     // About Section
@@ -253,6 +308,11 @@
             color: $white;
             font-size: $title-medium;
             font-weight: 700;
+
+            @media (max-width: $max-width-sm) {
+                margin-top: 70px;
+                font-size: $title-small;
+            }
         }
 
         .quote-author {

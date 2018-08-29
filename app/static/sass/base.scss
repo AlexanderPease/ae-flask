@@ -139,12 +139,12 @@ ul {
 
     $col-margin: 42px;
     .qa-left {
-        position: sticky;
-        top: 70px; // Ugly, height of navbar
         padding-top: 30px;
 
-        @media (min-width: $min-width-sm) {
+        @media (min-width: $min-width-sm)  {
             margin-right: $col-margin;
+            position: sticky;
+            top: 70px; // Ugly, height of navbar
         }
     }
 
@@ -156,7 +156,7 @@ ul {
         }
 
         @media (max-width: $max-width-sm) {
-            margin-top: 40px;
+            margin-top: 30px;
         }
     }
 
@@ -166,6 +166,7 @@ ul {
 
         @media (max-width: $max-width-sm) {
             font-size: $title-mobile;
+            margin-bottom: 30px;
         }
     }
 
@@ -176,7 +177,7 @@ ul {
 
 .section-break {
     height: 400px;
-    background-size: auto 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 
     @media (max-width: $max-width-sm) {
