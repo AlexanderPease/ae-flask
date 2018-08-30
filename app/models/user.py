@@ -55,18 +55,3 @@ class User(db.Document):
 
     def get_id(self):
         return str(self.id)
-
-
-#         airtable.get_all(view='MyView', maxRecords=20)
-
-# airtable.insert({'Name': 'Brian'})
-
-# airtable.search('Name', 'Tom')
-
-# airtable.update_by_field('Name', 'Tom', {'Phone': '1234-4445'})
-
-# airtable.delete_by_field('Name', 'Tom')
-
-
-# def register_signals():
-#     signals.post_save.connect(_update_airtable, sender=User)
