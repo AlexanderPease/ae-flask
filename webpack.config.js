@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     entry:  __dirname + '/static/js/index.jsx',
@@ -9,20 +10,15 @@ const config = {
     resolve: {
         extensions: ['.js', '.jsx', '.css']
     },
-};
-
-module: {
-  rules: [
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: 'babel-loader',
-      query: {
-        // presets: ['babel/preset-env','@babel/preset-react']
-        presets: ['env', 'react']
-      }
+    module: {
+        rules: [
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            }
+        ]
     }
-  ]
-}
+};
 
 module.exports = config;
