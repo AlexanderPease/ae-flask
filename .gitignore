@@ -11,4 +11,6 @@ pyvenv.cfg
 __py_cache__
 .env
 npm-debug.log*
+__pycache__
+__pycache__/*
 
