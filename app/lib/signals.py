@@ -16,26 +16,29 @@ def register_signals():
 def _update_airtable(sender, document, created=False, **kwargs):
     """Update user airtable."""
     json = dict()
+    print(document)
 
     for k, v in document.airtable_map.items():
         json[v] = getattr(document, k)
 
+    print(json)
     # Ex. AEAirtable.user for User model
     table = getattr(
         AEAirtable,
         str(document.__class__.__name__).lower()
     )
+    print(table)
 
     if document.airtable_id:
         try:
             table.update(document.airtable_id, json)
         except Exception:
             logging.error(
-                f'Failed to update document {document.id} to Airtable')
+                f'Failed to update document {json} to Airtable')
     else:
         try:
             rv = table.insert(json)
             document.airtable_id = rv.get('id')
         except Exception:
             logging.error(
-                f'Failed to insert document {document.id} to Airtable')
+                f'Failed to insert document {json} to Airtable')

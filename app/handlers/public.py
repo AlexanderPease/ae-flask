@@ -74,7 +74,7 @@ def newsletter_lead():
         return dict(code=400, message='email not found')
 
     try:
-        lead = Lead(email=email).save()
+        Lead(email=email).save()
     except NotUniqueError:
         pass  # In future could tailor response message
 

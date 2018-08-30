@@ -8,7 +8,7 @@
         margin-right: 60px;
     }
 
-    h3, .footer-title, .footer-content, .footer-disclaimer {
+    h2, h3, .footer-title, .footer-content, .footer-disclaimer {
         color: $white;        
     }
 
@@ -16,7 +16,7 @@
         margin-bottom: 50px;
     }
 
-    .footer-title {
+    .newsletter-email h2, .footer-title {
         display: block;
         font-size: $text-large;
         margin-bottom: 20px;

@@ -6,7 +6,7 @@ class Lead(db.Document):
 
     airtable_id = db.StringField()
     airtable_map = dict(
-        email='email'
+        email='Email'
     )
 
     def __str__(self):
