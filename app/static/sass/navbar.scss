@@ -3,17 +3,32 @@
     padding-top: 0;
     padding-bottom: 0;
     border-bottom: 1px solid $light-gray;
+    height: 70px;
+
+     @media (max-width: $max-width-sm) {
+            height: 60px;
+        }
 
     .navbar-brand {
         font-size: $title-small;
         color: $black;
         font-weight: 700;
         margin-left: 10px;
+
+        @media (max-width: $max-width-sm) {
+            margin-left: 2px;
+            font-size: $text-large;
+        }
     }
 
     .btn-primary {
         padding-top: 21px;
         padding-bottom: 21px;
+
+        @media (max-width: $max-width-sm) {
+            padding-top: 16px;
+            padding-bottom: 15px;
+        }
     }
 
     .btn-right {

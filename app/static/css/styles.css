@@ -7,15 +7,27 @@ h1, h2, h3, p, span, .btn, label {
   font-family: Helvetica;
   font-weight: 700;
   color: #000000; }
+  @media (max-width: 767px) {
+    h1, h2, h3, p, span, .btn, label {
+      word-wrap: break-word; } }
 
 h1 {
   size: 60px; }
+  @media (max-width: 767px) {
+    h1 {
+      size: 36px; } }
 
 h2 {
   size: 36px; }
+  @media (max-width: 767px) {
+    h2 {
+      size: 24px; } }
 
 h3 {
   size: 24px; }
+  @media (max-width: 767px) {
+    h3 {
+      size: 18px; } }
 
 p {
   size: 14px; }
@@ -35,6 +47,9 @@ ul {
   font-size: 18px;
   font-weight: 700;
   padding: 10px 36px; }
+  @media (max-width: 767px) {
+    .btn {
+      padding: 8px 20px; } }
   .btn:focus {
     box-shadow: none;
     border: none; }
@@ -50,21 +65,21 @@ ul {
 .btn-secondary {
   background-color: #000000; }
 
-.form-control, .form-control:focus {
+.form-control {
   border-radius: 0;
   background-color: #F2F2F2;
   color: #000000; }
-  .form-control:focus, .form-control:focus:focus {
+  .form-control:focus {
     box-shadow: none;
     border: 1px solid #999999; }
-  .form-control::placeholder, .form-control:focus::placeholder {
+  .form-control::placeholder {
     color: #999999; }
 
 .form-negative {
   border: none;
   height: auto; }
-  .form-negative::placeholder {
-    color: #F2F2F2; }
+  .form-negative:focus {
+    border: none; }
 
 .input-group-append > .btn {
   padding-top: 20px;
@@ -76,49 +91,68 @@ ul {
 .section-qa {
   margin-top: 80px;
   margin-bottom: 60px; }
+  @media (max-width: 767px) {
+    .section-qa {
+      margin-top: 40px;
+      margin-bottom: 30px; } }
   .section-qa .qa-left {
-    margin-right: 42px;
-    position: sticky;
-    top: 70px;
     padding-top: 30px; }
+    @media (min-width: 768px) {
+      .section-qa .qa-left {
+        margin-right: 42px;
+        position: sticky;
+        top: 70px; } }
   .section-qa .qa-right {
-    margin-left: 42px;
     margin-top: 200px; }
+    @media (min-width: 768px) {
+      .section-qa .qa-right {
+        margin-left: 42px; } }
+    @media (max-width: 767px) {
+      .section-qa .qa-right {
+        margin-top: 30px; } }
   .section-qa .question, .section-qa .answer {
     font-size: 48px;
     margin-bottom: 40px; }
+    @media (max-width: 767px) {
+      .section-qa .question, .section-qa .answer {
+        font-size: 30px;
+        margin-bottom: 30px; } }
   .section-qa .answer {
     color: #999999; }
 
 .section-break {
   height: 400px;
-  background-size: auto 100%;
+  background-size: cover;
   background-repeat: no-repeat; }
-
-.section-quote {
-  height: 600px;
-  background-size: auto 100%;
-  background-repeat: no-repeat; }
-  .section-quote .quote {
-    margin-top: 200px;
-    margin-bottom: 80px;
-    color: #FFFFFF;
-    font-size: 36px;
-    font-weight: 700; }
+  @media (max-width: 767px) {
+    .section-break {
+      height: 200px; } }
 
 .navbar {
   background-color: #FFFFFF;
   padding-top: 0;
   padding-bottom: 0;
-  border-bottom: 1px solid #F2F2F2; }
+  border-bottom: 1px solid #F2F2F2;
+  height: 70px; }
+  @media (max-width: 767px) {
+    .navbar {
+      height: 60px; } }
   .navbar .navbar-brand {
     font-size: 24px;
     color: #000000;
     font-weight: 700;
     margin-left: 10px; }
+    @media (max-width: 767px) {
+      .navbar .navbar-brand {
+        margin-left: 2px;
+        font-size: 18px; } }
   .navbar .btn-primary {
     padding-top: 21px;
     padding-bottom: 21px; }
+    @media (max-width: 767px) {
+      .navbar .btn-primary {
+        padding-top: 16px;
+        padding-bottom: 15px; } }
   .navbar .btn-right {
     margin-right: -16px; }
 
@@ -153,19 +187,27 @@ ul {
 
 .index-page .hero {
   background-image: url("../img/hero_@2x.jpg");
-  background-size: auto 120%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-color: #51A669;
-  height: 500px; }
+  height: 440px; }
+  @media (max-width: 767px) {
+    .index-page .hero {
+      background-position: 15% 0%; } }
 
 .index-page h1.hero-title {
   margin-top: 90px;
   margin-bottom: 20px;
   color: #FFFFFF; }
+  @media (max-width: 767px) {
+    .index-page h1.hero-title {
+      font-size: 36px;
+      margin-top: 50px; } }
 
 .index-page .hero-subtitle {
   size: 18px;
+  line-height: 1.3em;
   color: #FFFFFF;
   display: block;
   margin-right: 80px;
@@ -195,23 +237,41 @@ ul {
 
 .index-page .poster {
   margin-bottom: 80px; }
+  @media (max-width: 767px) {
+    .index-page .poster {
+      margin-bottom: 40px; } }
 
 .index-page .poster-image {
   width: 120px;
   position: absolute; }
+  @media (max-width: 767px) {
+    .index-page .poster-image {
+      width: 70px; } }
 
 .index-page .poster-text {
   margin-left: 160px; }
+  @media (max-width: 767px) {
+    .index-page .poster-text {
+      margin-left: 90px; } }
 
 .index-page .poster-text > ul {
   font-size: 18px; }
+  @media (max-width: 767px) {
+    .index-page .poster-text > ul {
+      font-size: 14px; } }
 
 .index-page .poster-title {
   font-size: 36px; }
+  @media (max-width: 767px) {
+    .index-page .poster-title {
+      font-size: 18px; } }
 
 .index-page .poster-subtitle {
   font-size: 18px;
   margin-top: 10px; }
+  @media (max-width: 767px) {
+    .index-page .poster-subtitle {
+      font-size: 14px; } }
 
 .index-page .poster-mini {
   margin-bottom: 60px; }
@@ -225,9 +285,23 @@ ul {
   color: #999999;
   margin-top: 8px; }
 
+@media (max-width: 767px) {
+  .index-page .poster-mini {
+    min-height: 100px;
+    margin-bottom: 30px; }
+  .index-page .poster-mini-image {
+    width: 80px;
+    position: absolute;
+    left: 0; }
+  .index-page .poster-mini-title, .index-page .poster-mini-subtitle {
+    margin-left: 100px; } }
+
 .index-page .divider-1 {
   background-image: url("../img/divider_001_@2x.jpg");
   background-position: 50% 100%; }
+  @media (max-width: 767px) {
+    .index-page .divider-1 {
+      background-position-x: 45%; } }
 
 .index-page .divider-2 {
   background-image: url("../img/divider_002_@2x.jpg"); }
@@ -241,12 +315,21 @@ ul {
 .index-page .quote-2 {
   background-image: url("../img/quote_002_@2x.jpg"); }
 
+.index-page .logo-row {
+  text-align: center;
+  margin-bottom: 30px; }
+
 .index-page .logo-box {
   display: inline-block;
-  width: 210px;
+  width: 100%;
   height: 160px;
-  background-color: #F2F2F2;
-  margin: 18px; }
+  background-color: #F2F2F2; }
+  @media (min-width: 768px) {
+    .index-page .logo-box {
+      margin: 18px; } }
+  @media (max-width: 767px) {
+    .index-page .logo-box {
+      height: 140px; } }
 
 .index-page .logo-img-container {
   background-repeat: no-repeat;
@@ -255,6 +338,10 @@ ul {
   width: 100%;
   height: 60px;
   margin-top: 50px; }
+  @media (max-width: 767px) {
+    .index-page .logo-img-container {
+      background-size: 100px;
+      margin-top: 40px; } }
 
 .index-page .logo-wsj {
   background-image: url("../img/logos/logo-wsj.png"); }
@@ -276,15 +363,22 @@ ul {
 
 .index-page .newsletter-email {
   margin-top: 100px; }
+  @media (max-width: 767px) {
+    .index-page .newsletter-email {
+      margin-top: 40px; } }
 
 .index-page .newsletter-email > h2 {
   color: #FFFFFF; }
+  @media (max-width: 767px) {
+    .index-page .newsletter-email > h2 {
+      font-size: 24px; } }
 
 .index-page .bio {
-  min-height: 170px; }
+  min-height: 170px;
+  margin-bottom: 30px; }
 
 .index-page .bio-top {
-  margin-top: 20px; }
+  margin-top: 30px; }
 
 .index-page .bio-image {
   height: 160px;
@@ -299,11 +393,49 @@ ul {
   color: #999999;
   margin-top: 10px; }
 
+@media (max-width: 767px) {
+  .index-page .section-financial-aid .btn-primary {
+    margin-bottom: 20px; } }
+
 .index-page .section-about .btn-preview-video, .index-page .section-about .oi {
   background-color: #51A669;
   color: #FFFFFF;
   margin-top: 20px;
   margin-bottom: 20px; }
+
+.index-page .section-about .qa-right {
+  margin-top: 100px; }
+
+.index-page .section-about-alt {
+  margin-top: 80px;
+  margin-bottom: 60px; }
+  .index-page .section-about-alt h2 {
+    text-align: center;
+    margin-bottom: 20px; }
+  .index-page .section-about-alt .btn-preview-video {
+    position: absolute;
+    right: 50px; }
+
+.index-page .section-quote {
+  background-size: cover; }
+  .index-page .section-quote .quote {
+    margin-top: 150px;
+    margin-bottom: 14px;
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: 700; }
+    @media (max-width: 767px) {
+      .index-page .section-quote .quote {
+        margin-top: 70px;
+        font-size: 24px; } }
+  .index-page .section-quote .quote-author {
+    margin-left: 200px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px; }
+
+.index-page .qa-financial-aid-right > .poster {
+  margin-bottom: 100px; }
 
 .index-page .subtext {
   color: #999999; }

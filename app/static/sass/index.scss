@@ -2,21 +2,31 @@
     // Hero section
     .hero {
         background-image: url($img_path + 'hero_@2x.jpg');
-        background-size: auto 120%;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 100%;
         background-color: $green;
-        height: 500px;
+        height: 440px;
+
+        @media (max-width: $max-width-sm) {
+            background-position: 15% 0%;
+        }
     }
 
     h1.hero-title {
         margin-top: 90px;
         margin-bottom: 20px;
         color: $white;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $title-medium;
+            margin-top: 50px;
+        }
     }
 
     .hero-subtitle {
-        size: 18px;
+        size: $text-large;
+        line-height: 1.3em;
         color: $white;
         display: block;
         margin-right: 80px;
@@ -53,29 +63,52 @@
     // Posters
     .poster {
         margin-bottom: 80px;
+
+        @media (max-width: $max-width-sm) {
+            margin-bottom: 40px;
+        }
     }
 
-    $image-width: 120px;
     .poster-image {
-        width: $image-width;
+        width: 120px;
         position: absolute;
+
+        @media (max-width: $max-width-sm) {
+            width: 70px;
+        }
     }
 
     .poster-text {
-        margin-left: $image-width + 40px;
+        margin-left: 120px + 40px;
+
+        @media (max-width: $max-width-sm) {
+            margin-left: 90px;
+        }
     }
 
     .poster-text>ul {
         font-size: $text-large;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $text;
+        }
     }
 
     .poster-title {
         font-size: $title-medium;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $text-large;
+        }
     }
 
     .poster-subtitle {
         font-size: $text-large;
         margin-top: 10px;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $text;
+        }
     }
 
     // Mini Posters
@@ -94,10 +127,32 @@
         margin-top: 8px;
     }
 
+    @media (max-width: $max-width-sm) {
+        .poster-mini {
+            min-height: 100px;  
+            margin-bottom: 30px;
+        }
+
+        $mini-image-width: 80px;
+        .poster-mini-image {
+            width: $mini-image-width;
+            position: absolute;
+            left: 0;
+        }
+
+        .poster-mini-title, .poster-mini-subtitle {
+            margin-left: $mini-image-width + 20px;
+        }
+    }
+
     // Section breaks
     .divider-1 {
         background-image: url($img_path + 'divider_001_@2x.jpg');
         background-position: 50% 100%;
+
+        @media (max-width: $max-width-sm) {
+            background-position-x: 45%;
+        }
     }
 
     .divider-2 {
@@ -117,13 +172,24 @@
     }
 
     // Logos
-    $logo-box-height: 160px;
+    .logo-row {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
     .logo-box {
         display: inline-block;
-        width: 210px;
-        height: $logo-box-height;
+        width: 100%;
+        height: 160px;
         background-color: $light-gray;
-        margin: 18px;
+
+        @media (min-width: $min-width-sm) {
+            margin: 18px;
+        }
+
+        @media (max-width: $max-width-sm) {
+            height: 140px;
+        }
     }
 
     .logo-img-container {
@@ -133,6 +199,11 @@
         width: 100%; 
         height: 60px;
         margin-top: 50px;
+
+        @media (max-width: $max-width-sm) {
+            background-size: 100px;
+            margin-top: 40px;
+        }
     }
 
     $companies: ['wsj', 'nike', 'barkbox', 'diageo', 'novozymes', 'carlsberg'];
@@ -145,10 +216,18 @@
     // Newsletter form
     .newsletter-email {
         margin-top: 100px;
+
+        @media (max-width: $max-width-sm) {
+            margin-top: 40px;
+        }
     }
 
     .newsletter-email>h2 {
         color: $white;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $title-small;
+        }
     }
 
     // Bios
@@ -157,10 +236,11 @@
 
     .bio {
         min-height: $image-height + 10px;
+        margin-bottom: 30px;
     }
 
     .bio-top {
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     .bio-image {
@@ -179,6 +259,16 @@
         margin-top: 10px;
     }
 
+    // Financial Aid
+    .section-financial-aid {
+
+        @media (max-width: $max-width-sm) {
+            .btn-primary {
+                margin-bottom: 20px;    
+            }
+        }
+    }
+
     // About Section
     .section-about {
         .btn-preview-video, .oi {
@@ -187,9 +277,57 @@
             margin-top: 20px;
             margin-bottom: 20px;
         }
+
+        .qa-right {
+            margin-top: 100px;
+        }
+    }
+
+    .section-about-alt {
+        margin-top: 80px;
+        margin-bottom: 60px;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-preview-video {
+            position: absolute;
+            right: 50px;
+        }
+    }
+
+    // Quotes 
+    .section-quote {
+        background-size: cover;
+
+        .quote {
+            margin-top: 150px;
+            margin-bottom: 14px;
+            color: $white;
+            font-size: $title-medium;
+            font-weight: 700;
+
+            @media (max-width: $max-width-sm) {
+                margin-top: 70px;
+                font-size: $title-small;
+            }
+        }
+
+        .quote-author {
+            margin-left: 200px;
+            color: $white;
+            font-weight: 700;
+            font-size: $text;
+        }
     }
 
     // Other
+    .qa-financial-aid-right>.poster {
+        margin-bottom: 100px;
+    }
+
     .subtext {
         color: $gray;
     }

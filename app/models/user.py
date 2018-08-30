@@ -1,3 +1,4 @@
+from app.lib.constants import COURSE_TYPES
 from app.models import db
 
 
@@ -6,6 +7,10 @@ class User(db.Document):
     last_name = db.StringField(required=True)
     email = db.StringField(required=True, unique=True)
     password_hash = db.StringField(required=True)
+    
+    course_type = db.StringField(
+        required=True,
+        choices=COURSE_TYPES)
 
     company = db.StringField()
     employment_status = db.StringField()

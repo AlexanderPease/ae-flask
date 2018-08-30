@@ -1,5 +1,5 @@
-{% macro bio(title, subtitle, text, img_path) %}
-<div class="bio bio-top">
+{% macro bio(title, subtitle, text, img_path, top=False) %}
+<div class="bio {% if top %}bio-top{% endif %}">
   <img class="bio-image" src="{{ url_for('static', filename='img/bios/' + img_path) }}"></img>
   <div class="bio-text">
     <span class="bio-title">{{ title }}</span>

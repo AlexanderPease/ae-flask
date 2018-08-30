@@ -32,8 +32,15 @@
               {{ form_group(form.last_name) }}
             </div>
           </div>
-          {{ form_group(form.email) }}
-          {{ form_group(form.password) }}
+          <div class="row">
+            <div class="col-md-6">
+              {{ form_group(form.email) }}
+            </div>
+            <div class="col-md-6">
+              {{ form_group(form.password) }}
+            </div>
+          </div>
+          {{ form_group(form.course_type) }}
 
           <button class="btn btn-primary" href="{{ url_for('application_email') }}" type="submit">Next</button>
         </form>

@@ -9,18 +9,35 @@ h1, h2, h3, p, span, .btn, label {
     font-family: $font-family;
     font-weight: 700;
     color: $black;
+
+    @media (max-width: $max-width-sm) {
+        word-wrap: break-word;
+    }
 }
 
 h1 {
     size: 60px;
+
+    @media (max-width: $max-width-sm) {
+        size: $title-medium;
+    }
 }
 
 h2 {
     size: $title-medium;
+
+    @media (max-width: $max-width-sm) {
+        size: $title-small;
+    }
+
 }
 
 h3 {
     size: $title-small;
+
+    @media (max-width: $max-width-sm) {
+        size: $text-large;
+    }
 }
 
 p {
@@ -48,6 +65,10 @@ ul {
     font-weight: 700;
     padding: 10px 36px;
 
+    @media (max-width: $max-width-sm) {
+        padding: 8px 20px;
+    }
+
     &:focus {
         box-shadow: none;
         border: none;
@@ -72,7 +93,7 @@ ul {
 
 
 // Forms
-.form-control, .form-control:focus {
+.form-control {
     border-radius: 0;
     background-color: $light-gray;
     color: $black;
@@ -88,18 +109,13 @@ ul {
 }
 
 .form-negative {
-
     border: none;
     height: auto;
 
-    &::placeholder {
-        color: $light-gray;
+    &:focus {
+        border: none;
     }
 }
-
-// input::placeholder {
-//     color: $light-gray;
-// }
 
 .input-group-append>.btn {
     padding-top: 20px;
@@ -115,23 +131,43 @@ ul {
     margin-top: 80px;
     margin-bottom: 60px;
 
+    @media (max-width: $max-width-sm) {
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
 
     $col-margin: 42px;
     .qa-left {
-        margin-right: $col-margin;
-        position: sticky;
-        top: 70px; // Ugly, height of navbar
         padding-top: 30px;
+
+        @media (min-width: $min-width-sm)  {
+            margin-right: $col-margin;
+            position: sticky;
+            top: 70px; // Ugly, height of navbar
+        }
     }
 
     .qa-right {
-        margin-left: $col-margin;
         margin-top: 200px;
+
+        @media (min-width: $min-width-sm) {
+            margin-left: $col-margin;
+        }
+
+        @media (max-width: $max-width-sm) {
+            margin-top: 30px;
+        }
     }
 
     .question, .answer {
         font-size: $title-large;
         margin-bottom: 40px;
+
+        @media (max-width: $max-width-sm) {
+            font-size: $title-mobile;
+            margin-bottom: 30px;
+        }
     }
 
     .answer {
@@ -141,20 +177,11 @@ ul {
 
 .section-break {
     height: 400px;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-}
-
-.section-quote {
-    height: 600px;
-    background-size: auto 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 
-    .quote {
-        margin-top: 200px;
-        margin-bottom: 80px;
-        color: $white;
-        font-size: $title-medium;
-        font-weight: 700;
+    @media (max-width: $max-width-sm) {
+        height: 200px;
     }
+
 }
