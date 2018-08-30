@@ -1,3 +1,5 @@
+from mongoengine import signals
+
 from app.lib.constants import COURSE_TYPES
 from app.models import db
 
@@ -7,7 +9,7 @@ class User(db.Document):
     last_name = db.StringField(required=True)
     email = db.StringField(required=True, unique=True)
     password_hash = db.StringField(required=True)
-    
+
     course_type = db.StringField(
         required=True,
         choices=COURSE_TYPES)
@@ -18,7 +20,20 @@ class User(db.Document):
     age = db.IntField()
 
     entrepreneurial_essay = db.StringField()
-    problems_essay = db.StringField()
+    problem_essay = db.StringField()
+
+    airtable_id = db.StringField()
+    airtable_map = dict(
+        first_name='First Name',
+        last_name='Last Name',
+        course_type='Course Type',
+        company='Company',
+        employment_status='Employment Status',
+        academic_degree='Academic Degree',
+        age='Age',
+        entrepreneurial_essay='Entrepreneurial Essay',
+        problem_essay='Problems Essay'
+    )
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'

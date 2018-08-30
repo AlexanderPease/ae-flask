@@ -7,7 +7,8 @@ VARS = {
     # 'DEBUG': True,
     # 'FLASK_LOG_LEVEL': 'DEBUG',
     'PRODUCT_NAME': 'Applied Entrepreneurship',
-    'TEMPLATES_AUTO_RELOAD': True
+    'TEMPLATES_AUTO_RELOAD': True,
+    'AIRTABLE_AE': 'appCVnjZ57nX6jkJb'
 }
 
 ENV_VARS = [

@@ -4,5 +4,10 @@ from app.models import db
 class Lead(db.Document):
     email = db.StringField(required=True)
 
+    airtable_id = db.StringField()
+    airtable_map = dict(
+        email='email',
+    )
+
     def __str__(self):
         return f'{self.first} {self.last_name}'
