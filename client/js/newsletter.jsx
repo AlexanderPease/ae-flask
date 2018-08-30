@@ -26,7 +26,6 @@ export default class NewsletterForm extends React.Component {
       window.location.href + 'lead',
       {'email': this.state.value},
       (data) => {  
-        console.log(data)
         if (data['code'] == 200) {
           this.handleSuccess();
         } else {
@@ -38,7 +37,6 @@ export default class NewsletterForm extends React.Component {
 
   handleSuccess() {
     this.setState({ success: true });
-    console.log('set to true')
   }
 
   render() {
