@@ -75,7 +75,7 @@ ul {
     }
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary, .btn-default {
     color: $white;
 
     &:hover, &:active {
@@ -87,7 +87,7 @@ ul {
     background-color: $green;
 }
 
-.btn-secondary {
+.btn-default {
     background-color: $black;
 }
 

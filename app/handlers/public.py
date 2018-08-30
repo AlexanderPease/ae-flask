@@ -1,6 +1,8 @@
 from flask import current_app as app
-from flask import Blueprint, redirect, render_template, session, url_for
+from flask import Blueprint, redirect, request, render_template, url_for
+from flask import jsonify, make_response
 from flask_login import current_user, login_user
+from mongoengine.errors import NotUniqueError
 
 from app.forms.application import ApplicationEmailForm, ApplicationFullForm
 from app.forms.newsletter import NewsletterForm
@@ -64,16 +66,17 @@ def application_success():
         step=3)
 
 
-@app.route('/lead/create', methods=['POST'])
+@app.route('/lead', methods=['POST'])
 def newsletter_lead():
-    form = NewsletterForm()
+    try:
+        email = request.form.get('email')
+    except Exception:
+        return dict(code=400, message='email not found')
 
-    if form.validate_on_submit():
-        lead = Lead()
-        form.populate_obj(lead)
-        return redirect(url_for('application_email'))
+    try:
+        lead = Lead(email=email).save()
+    except NotUniqueError:
+        pass  # In future could tailor response message
 
-    return redirect(url_for('index'))
-
-
-
+    response = dict(code=200, message='success')
+    return make_response(jsonify(response), response.get('code'))

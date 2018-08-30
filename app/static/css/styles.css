@@ -54,15 +54,15 @@ ul {
     box-shadow: none;
     border: none; }
 
-.btn-primary, .btn-secondary {
+.btn-primary, .btn-default {
   color: #FFFFFF; }
-  .btn-primary:hover, .btn-primary:active, .btn-secondary:hover, .btn-secondary:active {
+  .btn-primary:hover, .btn-primary:active, .btn-default:hover, .btn-default:active {
     background-color: #346D44; }
 
 .btn-primary {
   background-color: #51A669; }
 
-.btn-secondary {
+.btn-default {
   background-color: #000000; }
 
 .form-control {
@@ -366,12 +366,11 @@ ul {
   @media (max-width: 767px) {
     .index-page .newsletter-email {
       margin-top: 40px; } }
-
-.index-page .newsletter-email > h2 {
-  color: #FFFFFF; }
-  @media (max-width: 767px) {
-    .index-page .newsletter-email > h2 {
-      font-size: 24px; } }
+  .index-page .newsletter-email h2 {
+    color: #FFFFFF; }
+    @media (max-width: 767px) {
+      .index-page .newsletter-email h2 {
+        font-size: 24px; } }
 
 .index-page .bio {
   min-height: 170px;

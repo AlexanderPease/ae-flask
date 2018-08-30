@@ -220,13 +220,13 @@
         @media (max-width: $max-width-sm) {
             margin-top: 40px;
         }
-    }
 
-    .newsletter-email>h2 {
-        color: $white;
+        h2 {
+            color: $white;
 
-        @media (max-width: $max-width-sm) {
-            font-size: $title-small;
+            @media (max-width: $max-width-sm) {
+                font-size: $title-small;
+            }
         }
     }
 

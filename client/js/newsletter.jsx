@@ -1,46 +1,69 @@
 import React from "react";
-import { FormGroup, FormControl, ControlLabel, HelpBlock } from "react-bootstrap";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
+
+var $ = require('jquery');
 
 export default class NewsletterForm extends React.Component {
   constructor(props, context) {
     super(props, context);
 
     this.handleChange = this.handleChange.bind(this);
+    this.submitForm = this.submitForm.bind(this);
+    this.handleSuccess = this.handleSuccess.bind(this);
 
     this.state = {
-      value: ''
+      value: '',
+      success: false
     };
-  }
-
-  getValidationState() {
-    const length = this.state.value.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
-    return null;
   }
 
   handleChange(e) {
     this.setState({ value: e.target.value });
   }
 
+  submitForm() {
+    $.post(
+      window.location.href + 'lead',
+      {'email': this.state.value},
+      (data) => {  
+        console.log(data)
+        if (data['code'] == 200) {
+          this.handleSuccess();
+        } else {
+          // Potential future behavior
+        }
+      }
+    );
+  }
+
+  handleSuccess() {
+    this.setState({ success: true });
+    console.log('set to true')
+  }
+
   render() {
     return (
       <form>
-        <FormGroup
-          controlId="formBasicText"
-          validationState={this.getValidationState()}
-        >
-          <ControlLabel>Working example with validation</ControlLabel>
+        <h2>Let Me Know About Future Workshops</h2>
+        <InputGroup>
           <FormControl
             type="text"
             value={this.state.value}
-            placeholder="Enter text"
+            className="form-negative"
+            placeholder="example@email.com"
             onChange={this.handleChange}
+            disabled={this.state.success}
           />
-          <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
-        </FormGroup>
+          <div className="input-group-append">
+            <Button
+              bsStyle="default"
+              onClick={this.submitForm}
+              disabled={this.state.success}
+            >
+              {this.state.success ? 'Submitted!' : 'Sign Up'}
+            </Button>
+          </div>
+        </InputGroup>
       </form>
     );
   }
