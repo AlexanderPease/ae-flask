@@ -457,12 +457,9 @@ ul {
     margin-bottom: 10px; }
   .application-page .step {
     display: block;
-    margin-bottom: 6px; }
+    margin-bottom: 6px;
+    color: #999999; }
   .application-page .step-break {
     margin-bottom: 30px; }
-  .application-page .step-inactive > span {
-    color: #999999; }
   .application-page .step-active > span {
     color: #000000; }
-  .application-page .step-complete > span {
-    color: #51A669; }

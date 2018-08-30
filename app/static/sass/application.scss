@@ -28,22 +28,15 @@
     .step {
         display: block;
         margin-bottom: 6px;
+        color: $gray;
     }
 
     .step-break {
         margin-bottom: 30px;
     }
 
-    .step-inactive>span {
-        color: $gray;
-    }
-
     .step-active>span {
         color: $black;
-    }
-
-    .step-complete>span {
-        color: $green;
     }
 
 }
