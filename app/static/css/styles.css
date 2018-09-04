@@ -273,6 +273,9 @@ ul {
     .index-page .poster-subtitle {
       font-size: 14px; } }
 
+.index-page .poster-image, .index-page .poster-mini-image {
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.2); }
+
 .index-page .poster-mini {
   margin-bottom: 60px; }
 
@@ -317,16 +320,18 @@ ul {
 
 .index-page .logo-row {
   text-align: center;
-  margin-bottom: 30px; }
+  margin-bottom: 40px; }
 
 .index-page .logo-box {
   display: inline-block;
   width: 100%;
+  max-width: 224px;
   height: 160px;
   background-color: #F2F2F2; }
   @media (min-width: 768px) {
     .index-page .logo-box {
-      margin: 18px; } }
+      margin-left: 18px;
+      margin-right: 18px; } }
   @media (max-width: 767px) {
     .index-page .logo-box {
       height: 140px; } }
