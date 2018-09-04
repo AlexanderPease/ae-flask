@@ -9,6 +9,7 @@ h1, h2, h3, p, span, .btn, label {
     font-family: $font-family;
     font-weight: 700;
     color: $black;
+    line-height: 1.05em;
 
     @media (max-width: $max-width-sm) {
         word-wrap: break-word;
@@ -42,6 +43,7 @@ h3 {
 
 p {
     size: $text;
+    line-height: 1.35em;
 }
 
 ul {
@@ -162,6 +164,7 @@ ul {
 
     .question, .answer {
         font-size: $title-large;
+        line-height: 1.1;
         margin-bottom: 40px;
 
         @media (max-width: $max-width-sm) {
@@ -175,13 +178,15 @@ ul {
     }
 }
 
+$section-break-height-md: 400px;
+$section-break-height-sm: 200px;
 .section-break {
-    height: 400px;
+    height: $section-break-height-md;
     background-size: cover;
     background-repeat: no-repeat;
 
     @media (max-width: $max-width-sm) {
-        height: 200px;
+        height: $section-break-height-sm;
     }
 
 }

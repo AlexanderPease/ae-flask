@@ -223,7 +223,7 @@
 
     // Newsletter form
     .newsletter-email {
-        margin-top: 100px;
+        margin-top: 120px;
 
         @media (max-width: $max-width-sm) {
             margin-top: 40px;
@@ -310,23 +310,33 @@
     .section-quote {
         background-size: cover;
 
-        .quote {
-            margin-top: 150px;
-            margin-bottom: 14px;
-            color: $white;
-            font-size: $title-medium;
-            font-weight: 700;
+        .quote-text {
+            height: $section-break-height-md;
 
             @media (max-width: $max-width-sm) {
-                margin-top: 70px;
+                height: $section-break-height-sm;
+            }
+        }
+
+        .quote, .quote-author {
+            color: $white;
+            font-weight: 700;
+        }
+
+        .quote {
+            padding-top: 150px;
+            font-size: $title-medium;
+
+            @media (max-width: $max-width-sm) {
+                padding-top: 40px;
                 font-size: $title-small;
             }
         }
 
         .quote-author {
-            margin-left: 200px;
-            color: $white;
-            font-weight: 700;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 20px;
             font-size: $text;
         }
     }

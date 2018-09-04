@@ -6,7 +6,8 @@ body {
 h1, h2, h3, p, span, .btn, label {
   font-family: Helvetica;
   font-weight: 700;
-  color: #000000; }
+  color: #000000;
+  line-height: 1.05em; }
   @media (max-width: 767px) {
     h1, h2, h3, p, span, .btn, label {
       word-wrap: break-word; } }
@@ -30,7 +31,8 @@ h3 {
       size: 18px; } }
 
 p {
-  size: 14px; }
+  size: 14px;
+  line-height: 1.35em; }
 
 ul {
   padding-left: 18px; }
@@ -112,6 +114,7 @@ ul {
         margin-top: 30px; } }
   .section-qa .question, .section-qa .answer {
     font-size: 48px;
+    line-height: 1.1;
     margin-bottom: 40px; }
     @media (max-width: 767px) {
       .section-qa .question, .section-qa .answer {
@@ -367,7 +370,7 @@ ul {
   background-image: url("../img/logos/logo-carlsberg.png"); }
 
 .index-page .newsletter-email {
-  margin-top: 100px; }
+  margin-top: 120px; }
   @media (max-width: 767px) {
     .index-page .newsletter-email {
       margin-top: 40px; } }
@@ -422,20 +425,25 @@ ul {
 
 .index-page .section-quote {
   background-size: cover; }
-  .index-page .section-quote .quote {
-    margin-top: 150px;
-    margin-bottom: 14px;
+  .index-page .section-quote .quote-text {
+    height: 400px; }
+    @media (max-width: 767px) {
+      .index-page .section-quote .quote-text {
+        height: 200px; } }
+  .index-page .section-quote .quote, .index-page .section-quote .quote-author {
     color: #FFFFFF;
-    font-size: 36px;
     font-weight: 700; }
+  .index-page .section-quote .quote {
+    padding-top: 150px;
+    font-size: 36px; }
     @media (max-width: 767px) {
       .index-page .section-quote .quote {
-        margin-top: 70px;
+        padding-top: 40px;
         font-size: 24px; } }
   .index-page .section-quote .quote-author {
-    margin-left: 200px;
-    color: #FFFFFF;
-    font-weight: 700;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
     font-size: 14px; }
 
 .index-page .qa-financial-aid-right > .poster {
