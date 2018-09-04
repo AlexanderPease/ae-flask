@@ -35,7 +35,8 @@ p {
   line-height: 1.35em; }
 
 ul {
-  padding-left: 18px; }
+  padding-left: 18px;
+  line-height: 1.3em; }
 
 .caption {
   size: 11px; }

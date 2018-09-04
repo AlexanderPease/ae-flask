@@ -48,7 +48,9 @@ p {
 
 ul {
     padding-left: 18px;
+    line-height: 1.3em;
     // Insert plus images
+    // list-style-image: url($img_path + 'ul-plus@2x.jpg')
 }
 
 .caption {
