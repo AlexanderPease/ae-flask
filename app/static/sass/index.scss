@@ -4,18 +4,19 @@
         background-image: url($img_path + 'hero_@2x.jpg');
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: 50% 100%;
+        background-position: 50% 0%;
         background-color: $green;
-        height: 440px;
+        height: 500px;
 
         @media (max-width: $max-width-sm) {
             background-position: 15% 0%;
+            height: 400px;
         }
     }
 
     h1.hero-title {
-        margin-top: 90px;
-        margin-bottom: 20px;
+        margin-top: 130px;
+        margin-bottom: 30px;
         color: $white;
 
         @media (max-width: $max-width-sm) {
@@ -33,17 +34,24 @@
         margin-bottom: 30px;
     }
 
-    .btn-preview-video {
+    .btn-preview-video, .btn-cta {
         background-color: $white;
         color: $green;
-        height: 70px;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: 0;
 
         &:hover {
             color: $dark-green;
         }
+    }
+
+    .btn-preview-video {
+        height: 70px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+    }
+
+    .btn-cta {
+        padding: 20px 40px;
     }
 
     .img-preview-video {
