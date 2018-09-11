@@ -24,10 +24,6 @@
   <script>
     gtag('event', 'conversion', {'send_to': 'AW-944263894/z6PlCPGV7IgBENalocID'});
   </script>
-
-  <script>
-  fbq('track', 'CompleteRegistration');
-  </script>
   {% endif %}
 
   <!-- Facebook Pixel Code -->
@@ -59,6 +55,11 @@
   <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
+  {% if ad_conversion %}
+  <script>
+  fbq('track', 'CompleteRegistration');
+  </script>
+  {% endif %}
 
   <nav class="navbar {% if navbar_sticky %}navbar-sticky{% endif %}">
     <a class="navbar-brand mr-auto" href="{{ url_for('index') }}">
