@@ -63,7 +63,8 @@ def application_full():
 def application_success():
     return render_template(
         'public/application_success.html',
-        step=3)
+        step=3,
+        ad_conversion=True)
 
 
 @app.route('/lead', methods=['POST'])
