@@ -1,5 +1,4 @@
 import flask_admin
-from flask_admin.contrib.mongoengine import ModelView
 
 from app.lib.airtable import AEAirtable as AEAirtableBase
 from app.lib.admin import UserView, LeadView

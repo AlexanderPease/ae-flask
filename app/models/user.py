@@ -1,18 +1,17 @@
+from flask_login import UserMixin
 from mongoengine import signals
 
-from app.lib.constants import COURSE_TYPES
+from app.lib.constants import COURSE_TYPES, PERMISSION_TYPES
 from app.models import db
 
 
-class User(db.Document):
+class User(db.Document, UserMixin):
     first_name = db.StringField(required=True)
     last_name = db.StringField(required=True)
     email = db.StringField(required=True, unique=True)
     password_hash = db.StringField(required=True)
 
-    course_type = db.StringField(
-        required=True,
-        choices=COURSE_TYPES)
+    course_type = db.StringField(choices=COURSE_TYPES)
 
     company = db.StringField()
     employment_status = db.StringField()
@@ -21,6 +20,10 @@ class User(db.Document):
 
     entrepreneurial_essay = db.StringField()
     problem_essay = db.StringField()
+
+    permissions = db.ListField(
+        db.StringField(choices=PERMISSION_TYPES)
+    )
 
     airtable_id = db.StringField()
     airtable_map = dict(
@@ -38,20 +41,6 @@ class User(db.Document):
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
-    ###########################################################################
-    # flask_login required methods
-    ###########################################################################
     @property
-    def is_authenticated(self):
-        return True
-
-    @property
-    def is_active(self):
-        return True
-
-    @property
-    def is_anonymous(self):
-        return False
-
-    def get_id(self):
-        return str(self.id)
+    def is_admin(self):
+        return 'admin' in self.permissions

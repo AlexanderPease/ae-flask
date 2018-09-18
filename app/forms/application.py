@@ -1,12 +1,13 @@
 from flask_wtf import FlaskForm as Form
 from wtforms import (
-    PasswordField, TextField, IntegerField, SelectField, TextAreaField)
+    PasswordField, TextField, SelectField, TextAreaField)
 from wtforms.fields.html5 import EmailField
-from wtforms.validators import Email, Optional, Required
+from wtforms.validators import Email, Required
 
 from app.lib.constants import COURSE_TYPES
 
 COURSE_TYPES.insert(0, (None, '-----'))
+
 
 class ApplicationEmailForm(Form):
     """Step 1: Basic Information."""
@@ -27,7 +28,7 @@ class ApplicationFullForm(Form):
     age = SelectField(
         'Age',
         [Required()],
-        choices=[(i,i) for i in range(18, 100)],
+        choices=[(i, i) for i in range(18, 100)],
         coerce=int)
     employment_status = SelectField(
         'Employment Status',

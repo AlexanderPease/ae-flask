@@ -3,3 +3,7 @@ COURSE_TYPES = [
     ('part_time', 'Part Time'),
     ('online', 'Online')
 ]
+
+PERMISSION_TYPES = [
+    ('admin', 'Admin')
+]

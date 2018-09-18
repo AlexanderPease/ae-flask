@@ -5,8 +5,9 @@ from flask_login import current_user, login_user
 from mongoengine.errors import NotUniqueError
 
 from app.forms.application import ApplicationEmailForm, ApplicationFullForm
+from app.forms.login import LoginForm
 from app.forms.newsletter import NewsletterForm
-from app.lib.password import get_password_hash
+from werkzeug.security import check_password_hash
 from app.models.lead import Lead
 from app.models.user import User
 
@@ -30,7 +31,7 @@ def application_email():
         # Create new user
         new_user = User()
         form.populate_obj(new_user)
-        new_user.password_hash = get_password_hash(form.password.data)
+        new_user.password_hash = check_password_hash(form.password.data)
         new_user.save()
 
         # Log in new user
@@ -81,3 +82,18 @@ def newsletter_lead():
 
     response = dict(code=200, message='success')
     return make_response(jsonify(response), response.get('code'))
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        print(form.user)
+        login_user(form.user)
+        if 'admin' in current_user.permissions:
+            return redirect(url_for('admin.index'))
+        return redirect(url_for('index'))
+
+    return render_template(
+        'public/login.html',
+        form=form)
