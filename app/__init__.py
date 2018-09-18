@@ -53,8 +53,8 @@ def register_login(app):
 
 def register_signals(app):
     from app.lib.signals import register_signals
-
     register_signals()
+
 
 ###############################################################################
 # Main app setup
