@@ -7,7 +7,7 @@ from mongoengine.errors import NotUniqueError
 from app.forms.application import ApplicationEmailForm, ApplicationFullForm
 from app.forms.login import LoginForm
 from app.forms.newsletter import NewsletterForm
-from werkzeug.security import check_password_hash
+from werkzeug.security import generate_password_hash
 from app.models.lead import Lead
 from app.models.user import User
 
@@ -31,7 +31,7 @@ def application_email():
         # Create new user
         new_user = User()
         form.populate_obj(new_user)
-        new_user.password_hash = check_password_hash(form.password.data)
+        new_user.password_hash = generate_password_hash(form.password.data)
         new_user.save()
 
         # Log in new user
