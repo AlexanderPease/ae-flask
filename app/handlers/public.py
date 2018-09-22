@@ -41,7 +41,9 @@ def application_email():
     return render_template(
         'public/application_email.html',
         form=form,
-        step=1)
+        step=1,
+        fbad_event=('trackCustom', 'StartRegistration')
+    )
 
 
 @app.route('/apply-2', methods=['GET', 'POST'])
@@ -57,7 +59,9 @@ def application_full():
     return render_template(
         'public/application_full.html',
         form=form,
-        step=2)
+        step=2,
+        fbad_event=('trackCustom', 'CompleteRegistrationEmail')
+    )
 
 
 @app.route('/apply/success')
@@ -65,7 +69,9 @@ def application_success():
     return render_template(
         'public/application_success.html',
         step=3,
-        ad_conversion=True)
+        fbad_event=('track', 'CompleteRegistration'),
+        gad_event=True
+    )
 
 
 @app.route('/lead', methods=['POST'])
