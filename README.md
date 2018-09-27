@@ -1,5 +1,4 @@
-# ae-flask
 Prehype's Applied Entrepreneurship website
 
-# Technologies
+### Technologies
 Flask (Python), React, Sass, webpack
