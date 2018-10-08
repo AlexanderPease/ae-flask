@@ -15,12 +15,14 @@ mod = Blueprint('public', __name__)
 
 
 @app.route('/')
-def index():
+@app.route("/<any('uk', 'de', 'dk'):country>")
+def index(country=None):
     return render_template(
         'public/index.html',
         form=NewsletterForm(),
         navbar_sticky=True,
-        navbar_get_started=True)
+        navbar_get_started=True,
+        country=country)
 
 
 @app.route('/apply', methods=['GET', 'POST'])
