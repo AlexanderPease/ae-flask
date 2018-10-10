@@ -1,7 +1,8 @@
 from flask_login import UserMixin
 from mongoengine import signals
 
-from app.lib.constants import COURSE_TYPES, PERMISSION_TYPES
+from app.lib.constants import (
+    COURSE_TYPES, PERMISSION_TYPES, COURSE_DATES, NULL_CHOICE)
 from app.models import db
 
 
@@ -11,7 +12,9 @@ class User(db.Document, UserMixin):
     email = db.StringField(required=True, unique=True)
     password_hash = db.StringField(required=True)
 
-    course_type = db.StringField(choices=COURSE_TYPES)
+    course_type = db.StringField(choices=COURSE_TYPES + NULL_CHOICE)
+    course_date = db.StringField(choices=COURSE_DATES + NULL_CHOICE)
+    country_origin = db.StringField()
 
     company = db.StringField()
     employment_status = db.StringField()

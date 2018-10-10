@@ -2,24 +2,35 @@ from flask_wtf import FlaskForm as Form
 from wtforms import (
     PasswordField, TextField, SelectField, TextAreaField)
 from wtforms.fields.html5 import EmailField
-from wtforms.validators import Email, Required
+from wtforms.validators import Email, Required, Optional
 
-from app.lib.constants import COURSE_TYPES
+from app.lib.constants import COURSE_TYPES, COURSE_DATES
 
 COURSE_TYPES.insert(0, (None, '-----'))
+COURSE_DATES.insert(0, (None, '-----'))
 
 
 class ApplicationEmailForm(Form):
-    """Step 1: Basic Information."""
+    """Base form for Step 1: Basic Information."""
     first_name = TextField('First Name', [Required()])
     last_name = TextField('Last Name', [Required()])
     email = EmailField('Email', [Required(), Email()])
     password = PasswordField('Password', [Required()])
+
+class ApplicationEmailUSAForm(ApplicationEmailForm):
+    """Step 1: Basic Information for USA."""
     course_type = SelectField(
         'Which course are you most interested in?',
-        [Required()],
+        [Optional()],
         choices=COURSE_TYPES
     )
+
+class ApplicationEmailInternationalForm(ApplicationEmailForm):
+    """Step 1: Basic Information for International."""
+    course_date = SelectField(
+        'Which course are you most interested in?',
+        [Optional()],
+        choices=COURSE_DATES)
 
 
 class ApplicationFullForm(Form):

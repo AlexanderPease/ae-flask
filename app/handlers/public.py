@@ -1,13 +1,18 @@
 from flask import current_app as app
-from flask import Blueprint, redirect, request, render_template, url_for
+from flask import (
+    Blueprint, redirect, request, render_template, url_for, session)
 from flask import jsonify, make_response
 from flask_login import current_user, login_user
 from mongoengine.errors import NotUniqueError
+from werkzeug.security import generate_password_hash
 
-from app.forms.application import ApplicationEmailForm, ApplicationFullForm
+from app.forms.application import (
+    ApplicationEmailUSAForm,
+    ApplicationEmailInternationalForm, 
+    ApplicationFullForm)
 from app.forms.login import LoginForm
 from app.forms.newsletter import NewsletterForm
-from werkzeug.security import generate_password_hash
+from app.lib.constants import COURSE_DATES
 from app.models.lead import Lead
 from app.models.user import User
 
@@ -23,6 +28,7 @@ LOCAL_COST = dict(
 @app.route('/')
 @app.route("/<any('uk', 'de', 'dk'):country>")
 def index(country=None):
+    session['country'] = country
     local_cost = LOCAL_COST.get(country)
 
     return render_template(
@@ -36,12 +42,17 @@ def index(country=None):
 
 @app.route('/apply', methods=['GET', 'POST'])
 def application_email():
-    form = ApplicationEmailForm()
+    country = session.get('country')
+    if country:
+        form = ApplicationEmailInternationalForm()
+    else:
+        form = ApplicationEmailUSAForm()
 
     if form.validate_on_submit():
         # Create new user
         new_user = User()
         form.populate_obj(new_user)
+        new_user.country_origin = country
         new_user.password_hash = generate_password_hash(form.password.data)
         new_user.save()
 
@@ -53,6 +64,7 @@ def application_email():
         'public/application_email.html',
         form=form,
         step=1,
+        country=country,
         fbad_event=('trackCustom', 'StartRegistration')
     )
 
@@ -105,7 +117,6 @@ def newsletter_lead():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        print(form.user)
         login_user(form.user)
         if 'admin' in current_user.permissions:
             return redirect(url_for('admin.index'))

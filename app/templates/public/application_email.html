@@ -40,7 +40,11 @@
               {{ form_group(form.password) }}
             </div>
           </div>
+          {% if country %}
+          {{ form_group(form.course_date) }}
+          {% else %}
           {{ form_group(form.course_type) }}
+          {% endif %}
 
           <button class="btn btn-primary" href="{{ url_for('application_email') }}" type="submit">Next</button>
         </form>
