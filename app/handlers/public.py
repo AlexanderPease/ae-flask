@@ -13,16 +13,25 @@ from app.models.user import User
 
 mod = Blueprint('public', __name__)
 
+LOCAL_COST = dict(
+    uk='approx. £9.000',
+    de='approx. €10.000',
+    dk='approx. 75.000 DKK'
+)
+
 
 @app.route('/')
 @app.route("/<any('uk', 'de', 'dk'):country>")
 def index(country=None):
+    local_cost = LOCAL_COST.get(country)
+
     return render_template(
         'public/index.html',
         form=NewsletterForm(),
         navbar_sticky=True,
         navbar_get_started=True,
-        country=country)
+        country=country,
+        local_cost=local_cost)
 
 
 @app.route('/apply', methods=['GET', 'POST'])

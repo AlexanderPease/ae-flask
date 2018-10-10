@@ -1,6 +1,6 @@
-{% macro poster(title, subtitle, bullets, button=True) %}
+{% macro poster(title, subtitle, img_name, bullets, button=True) %}
 <div class="poster">
-  <img class="poster-image" src="{{ url_for('static', filename='img/posters/poster-' + title.lower().replace(' ', '-') + '.png') }}"></img>
+  <img class="poster-image" src="{{ url_for('static', filename='img/posters/poster-' + img_name + '.png') }}"></img>
   <div class="poster-text">
     <span class="poster-title">{{ title }}</span>
     
@@ -12,6 +12,16 @@
       <li>{{ b }}</li>
       {% endfor %}
     </ul>
+    {% endif %}
+
+    {% if country %}
+      <p class="poster-subtitle">Upcoming Courses:</p>
+      <ul>
+        <li>December 3&ndash;7, 2018</li>
+        <li>January 7&ndash;11, 2019</li>
+        <li>February 4&ndash;8, 2019</li>
+        <li>More dates coming soon</li>
+      </ul>
     {% endif %}
 
     {% if button %}

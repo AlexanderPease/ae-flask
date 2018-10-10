@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from 'macros/posters.html' import poster, poster_mini %}
+{% from 'macros/posters.html' import poster, poster_mini with context %}
 {% from 'macros/bio.html' import bio %}
 {% from 'macros/btns.html' import btn_get_started, btn_preview_video %}
 
@@ -7,7 +7,7 @@
 
 {% block body %}
 <div class="index-page">
-<div class="hero">
+<div class="hero {% if country %}hero-nyc{% endif%}">
     <div class="container">
       <div class="row">
         <div class="offset-md-2 col-md-8">
@@ -41,24 +41,37 @@
 
       <div class="col-md-6 ">
         <div class="qa-right">
+          {% if country %}
+          {{
+            poster(
+            '5 Day Program',
+            'Challenge yourself with an immersive learning experience.',
+            'full-time',
+            ['New York City location', '$12,500 tuition (' + local_cost + ')', 'English language curriculum']) 
+          }}
+          {% else %}
           {{
             poster(
             'Full-Time',
             'Challenge yourself with an immersive learning experience.',
+            'full-time',
             ['4 day intensive program', 'Next session: November 5-8', '$12,500 tuition']) 
           }}
           {{
             poster(
             'Part-Time',
             'Learn valuable skills on weeknights or weekends.',
-            ['10 week course', 'Starting November 5', '$12,500']) 
+            'part-time',
+            ['10 week course', 'Starting November 5', '$12,500 tuition']) 
           }}
           {{
             poster(
             'Online',
             'Study online at your own pace.',
-            ['40 hours of video tutorials & assignments', '$4,500'])
+            'online',
+            ['40 hours of video tutorials & assignments', '$4,500 tuition'])
           }}
+          {% endif %}
         </div>
       </div>
     </div>
@@ -277,12 +290,14 @@
           {{
             poster(
             'Employee Sponsorship',
+            'foo',
             'AE provides assistance in requesting financial support from your employer.',
             button=False) 
           }}
           {{
             poster(
             'Payment Plans',
+            'foo',
             'AE accommodates select self-sponsored students with payment plans.',
             button=False) 
           }}

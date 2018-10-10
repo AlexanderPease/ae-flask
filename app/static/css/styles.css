@@ -201,6 +201,9 @@ ul {
       background-position: 15% 0%;
       height: 400px; } }
 
+.index-page .hero-nyc {
+  background-image: url("../img/hero_nyc@2x.png"); }
+
 .index-page h1.hero-title {
   margin-top: 130px;
   margin-bottom: 30px;
